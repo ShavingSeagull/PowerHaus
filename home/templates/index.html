@@ -1,5 +1,9 @@
 {% block title %}PowerHaus{% endblock %}
 
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
+
 {% block content %}
 <!-- Header with Hero Image -->
 <header class="index-hero-img parallax">
@@ -146,4 +150,8 @@
     </div>
 </section>
 <!-- /.Why Choose Us Section -->
+{% endblock %}
+
+{% block custom_js %}
+<script src="{% static 'js/index.js' %}"></script>
 {% endblock %}
