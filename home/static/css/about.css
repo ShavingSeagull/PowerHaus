@@ -1,0 +1,36 @@
+/****** About Page ******/
+
+.about-hero-img {
+    background-image: url("../../images/barbell.jpg");
+	background-color: #222222;
+    background-position: center;
+	min-height: 50%;
+}
+
+.about-section p {
+    font-weight: bold;
+}
+
+.about-section h2 {
+    text-align: left;
+}
+
+.about-section .metal-header {
+    font-size: 3.5em;
+}
+
+.about-header > span {
+    color: red;
+}
+
+.about-header-white {
+    color: #ffffff;
+    text-shadow: 3px 5px 4px #000000;
+}
+
+/****** Media Queries ******/
+@media screen and (max-width: 560px) {
+    .about-section .metal-header {
+        font-size: 3em;
+    }
+}

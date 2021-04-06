@@ -1,0 +1,123 @@
+/****** Index (Home) page ******/
+
+/*** Header ***/
+.index-hero-img {
+	background-image: url("../../images/matwork.jpg");
+	background-color: #222222;
+	min-height: 100%;
+}
+/*** /.Header ***/
+
+/*** Product Range Section ***/
+.range-card-wrapper {
+	background-image: url("../../images/metal_bg.jpg");
+	background-size: cover;
+	background-color: #222222;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 2px 3px 2px #000000;
+}
+
+.range-card h3, .range-card p, .range-card i {
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 1px 1px 2px #000000;
+}
+
+.range-card p {
+	font-family: pontano_sans, sans-serif;
+}
+
+.range-card i {
+	font-size: 3em;
+}
+/*** /.Product Range Section ***/
+
+/*** Featured Products Section ***/
+.featured-products-section {
+	background-image: url("../../images/deadlift.jpg");
+	background-color: #222222;
+}
+
+.featured-products-section h2 {
+	color: #ffffff;
+}
+
+.featured-product > img {
+	border-radius: 3px;
+	box-shadow: 2px 2px 2px #000000;
+}
+/*** /.Featured Products Section ***/
+
+/*** Why Choose Us Section ***/
+.usps {
+	background-image: url("../../images/metal_bg.jpg");
+	background-size: cover;
+	background-color: rgba(0,0,0,0.1);
+	box-shadow: 2px 3px 2px #000000;
+	border-radius: 5px;
+}
+
+.choose-us-section p, .choose-us-section ul {
+	font-family: life_is_okayregular, 'Arial Black', sans-serif;
+	font-size: 1.2em;
+	color: #ffffff;
+	text-shadow: 1px 1px 2px #000000;
+}
+
+.usp-list {
+	list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.usp-list li {
+    padding: 10px 0 10px 16px;
+}
+
+.usp-list li::before {
+    content: "-";
+    padding-right: 8px;
+    color: red;
+}
+
+#usp-carousel {
+	box-shadow: 4px 4px 1px #000000;
+}
+/*** /.Why Choose Us Section ***/
+
+/*** Media Queries ***/
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	.choose-us-section p, 
+	.choose-us-section ul {
+		font-size: 1em;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.choose-us-section p, 
+	.choose-us-section ul {
+		text-align: center;
+	}
+}
+
+/* Change of image to fit the smaller orientation */
+@media screen and (max-width: 700px) {
+	.index-hero-img {
+		background-image: url("../../images/ezbar.jpg");
+	}
+}
+
+/* Change of image to fit the smaller orientation */
+@media screen and (max-width: 576px) {
+	.featured-products-section {
+		background-image: url("../../images/kettlebell_swing.jpg");
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.choose-us-section p, 
+	.choose-us-section ul {
+		font-size: 1em;
+	}
+}

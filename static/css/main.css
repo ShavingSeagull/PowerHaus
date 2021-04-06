@@ -1,0 +1,241 @@
+/****** Main styles used by all pages ******/
+
+@font-face {
+    font-family: life_is_okayregular;
+    src: url("../fonts/life_is_okay/LifeIsOkay.eot"); /* IE9 */
+    src: url("../fonts/life_is_okay/LifeIsOkay.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
+         url("../fonts/life_is_okay/Life Is Okay.otf") format("opentype"),
+         url("../fonts/life_is_okay/life_is_okay-webfont.ttf") format("truetype"),
+         url("../fonts/life_is_okay/life_is_okay-webfont.woff") format("woff"),
+         url("../fonts/life_is_okay/life_is_okay-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: pontano_sans;
+    src: url("../fonts/pontano_sans/PontanoSans-Regular.ttf") format("truetype");
+}
+
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: life_is_okayregular, "Arial Black", sans-serif;
+	text-transform: uppercase;
+}
+
+p, form {
+	font-family: pontano_sans, sans-serif;
+}
+
+section h2 {
+	text-align: center;
+	font-size: 3em;
+	text-shadow: 2px 2px 4px #222222;
+}
+
+.parallax {
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.enlarged-header {
+	color: red;
+	font-size: 1.2em;
+}
+
+.metal-bg {
+    background-image: url("../../images/metal_bg.jpg");
+    background-size: cover;
+}
+
+.metal-bg p {
+    color: #ffffff;
+}
+
+.metal-header {
+    color: #ffffff;
+    text-shadow: 5px 7px 4px #000000;
+    padding: 10px;
+}
+
+/* Prevents a floating footer on pages with less content */
+.no-floating-footer {
+    min-height: 100vh;
+}
+
+/*** Navbar ***/
+#main-nav {
+	background-color: #222222;
+	color: white;
+	font-size: 20px;
+	width: 80px;
+	height: 100%;
+	position: fixed;
+	box-shadow: 2px 0 3px #000000;
+	transition: 0.4s;
+	z-index: 3;
+	left: 0;
+	top: 0;
+}
+
+#main-nav > #nav-list > li {
+    display: inline;
+    list-style-type: none;
+}
+
+#main-nav > #nav-list > li > a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+	padding: 25px 20px;
+	display: block;
+}
+
+#main-nav > #nav-list > li > a:hover {
+	text-decoration: none;
+	border-left: 3px solid red;
+	color: orange;
+}
+
+.nav-branding {
+	position: absolute;
+	top: 70px;
+	font-family: life_is_okayregular, 'Arial Black', sans-serif;
+	font-size: 2.7em;
+	text-transform: uppercase;
+	padding-left: 15px;
+}
+
+.nav-branding > span {
+	color: red;
+}
+
+#nav-list {
+	position: absolute;
+	top: 170px;
+	left: 0;
+	width: 100%;
+	padding: 0;
+	list-style-type: none;
+	font-family: life_is_okayregular, 'Arial Black', sans-serif;
+}
+
+#nav-list > li > a > i {
+	font-size: 2.5rem;
+	width: 40px;
+}
+
+#nav-list > li > a > span {
+	position: relative;
+	bottom: 6px;
+	display: inline;
+	padding-left: 15px;
+	margin: 0;
+}
+
+#nav-button {
+	width: 70px;
+	height: 70px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: #222222;
+	color: #ffffff;
+	cursor: pointer;
+	z-index: 3;
+	transition: 0.2s;
+	display: none;
+}
+
+#nav-button i {
+    margin: 25% 0 0 28%; /* left margin slightly bigger due to the box-shadow */
+    font-size: 35px;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+}
+/*** /.Navbar ***/
+
+/*** Header ***/
+.hero-text {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+}
+
+.hero-text > h1 {
+	font-size: 4em;
+	text-shadow: 2px 2px #000000;
+}
+/*** /.Header ***/
+
+/*** Footer ***/
+footer {
+	background-color: #222222;
+	color: white;
+}
+
+footer a {
+	text-decoration: none;
+	color: white;
+}
+
+footer a:hover {
+	color: orange;
+}
+
+footer i {
+	font-size: 1.7em;
+}
+/*** /.Footer ***/
+
+/*** Media Queries ***/
+@media screen and (max-width: 1300px) {
+	.parallax {
+		background-attachment: scroll;
+	}
+	
+	#main-nav {
+		left: -100%;
+		width: 180px;
+	}
+
+	#nav-button {
+		display: block;
+		box-shadow: 4px 4px 3px #000000;
+	}
+
+	.hero-text > h1 {
+		font-size: 3.5em;
+	}
+
+	section h2 {
+		font-size: 2.5em;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.hero-text > h1 {
+		font-size: 2.2em;
+	}
+
+	section h2 {
+		font-size: 2em;
+	}
+}
