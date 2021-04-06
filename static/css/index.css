@@ -2,7 +2,7 @@
 
 /*** Header ***/
 .index-hero-img {
-	background-image: url("../../images/matwork.jpg");
+	background-image: url("../images/matwork.jpg");
 	background-color: #222222;
 	min-height: 100%;
 }
@@ -10,7 +10,7 @@
 
 /*** Product Range Section ***/
 .range-card-wrapper {
-	background-image: url("../../images/metal_bg.jpg");
+	background-image: url("../images/metal_bg.jpg");
 	background-size: cover;
 	background-color: #222222;
 	padding: 15px;
@@ -35,7 +35,7 @@
 
 /*** Featured Products Section ***/
 .featured-products-section {
-	background-image: url("../../images/deadlift.jpg");
+	background-image: url("../images/deadlift.jpg");
 	background-color: #222222;
 }
 
@@ -51,7 +51,7 @@
 
 /*** Why Choose Us Section ***/
 .usps {
-	background-image: url("../../images/metal_bg.jpg");
+	background-image: url("../images/metal_bg.jpg");
 	background-size: cover;
 	background-color: rgba(0,0,0,0.1);
 	box-shadow: 2px 3px 2px #000000;
@@ -104,14 +104,14 @@
 /* Change of image to fit the smaller orientation */
 @media screen and (max-width: 700px) {
 	.index-hero-img {
-		background-image: url("../../images/ezbar.jpg");
+		background-image: url("../images/ezbar.jpg");
 	}
 }
 
 /* Change of image to fit the smaller orientation */
 @media screen and (max-width: 576px) {
 	.featured-products-section {
-		background-image: url("../../images/kettlebell_swing.jpg");
+		background-image: url("../images/kettlebell_swing.jpg");
 	}
 }
 

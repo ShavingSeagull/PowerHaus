@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% load static %}
 {% block title %}PowerHaus{% endblock %}
 
 {% block custom_css %}
@@ -88,22 +90,22 @@
         </div>
         <div class="row">
             <div class="col-sm-6 col-md-4 mb-5 featured-product">
-                <img src="assets/images/bcaa.png" class="img-fluid" alt="Amino Acids" />
+                <img src="{% static 'images/bcaa.png' %}" class="img-fluid" alt="Amino Acids" />
             </div>
             <div class="col-sm-6 col-md-4 mb-5 featured-product">
-                <img src="assets/images/creatine.png" class="img-fluid" alt="Creatine" />
+                <img src="{% static 'images/creatine.png' %}" class="img-fluid" alt="Creatine" />
             </div>
             <div class="col-sm-6 col-md-4 mb-5 featured-product">
-                <img src="assets/images/protein_bar.png" class="img-fluid" alt="Protein Bar" />
+                <img src="{% static 'images/protein_bar.png' %}" class="img-fluid" alt="Protein Bar" />
             </div>
             <div class="col-sm-6 col-md-4 mb-5 featured-product">
-                <img src="assets/images/shaker.png" class="img-fluid" alt="Drink Shaker" />
+                <img src="{% static 'images/shaker.png' %}" class="img-fluid" alt="Drink Shaker" />
             </div>
             <div class="col-sm-6 col-md-4 mb-5 featured-product">
-                <img src="assets/images/vitamin_d.png" class="img-fluid" alt="Vitamin D" />
+                <img src="{% static 'images/vitamin_d.png' %}" class="img-fluid" alt="Vitamin D" />
             </div>
             <div class="col-sm-6 col-md-4 mb-5 featured-product">
-                <img src="assets/images/whey.png" class="img-fluid" alt="Whey Protein" />
+                <img src="{% static 'images/whey.png' %}" class="img-fluid" alt="Whey Protein" />
             </div>
         </div>
     </div>
@@ -135,13 +137,13 @@
                 <div id="usp-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="img-fluid img-thumbnail" src="assets/images/kettlebell_workout.jpg" alt="Kettlebell Workout">
+                            <img class="img-fluid img-thumbnail" src="{% static 'images/kettlebell_workout.jpg' %}" alt="Kettlebell Workout">
                         </div>
                         <div class="carousel-item">
-                            <img class="img-fluid img-thumbnail" src="assets/images/kettlebells.jpg" alt="Kettlebells">
+                            <img class="img-fluid img-thumbnail" src="{% static 'images/kettlebells.jpg' %}" alt="Kettlebells">
                         </div>
                         <div class="carousel-item">
-                            <img class="img-fluid img-thumbnail" src="assets/images/battle_ropes.jpg" alt="Battle Ropes">
+                            <img class="img-fluid img-thumbnail" src="{% static 'images/battle_ropes.jpg' %}" alt="Battle Ropes">
                         </div>
                     </div>
                 </div>
