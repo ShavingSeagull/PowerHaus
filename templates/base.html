@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="main-nav">
+        <p class="nav-branding"><span>P</span>H</p>
+        <ul id="nav-list">
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span class="d-none">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <i class="far fa-question-circle" aria-hidden="true"></i>
+                    <span class="d-none">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    <i class="fas fa-comment" aria-hidden="true"></i>
+                    <span class="d-none">Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="nav-button">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="overlay d-none"></div>
+    <!-- /.Navbar -->
+
+    <!-- Main content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!-- /.Main Content -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <p class="col-8 py-3 my-0">&copy; PowerHaus 2021 - UP2037692</p>
+                <div class="col-4 py-3 my-0 text-right">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /.Footer -->
+</body>
+</html>
