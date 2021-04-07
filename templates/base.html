@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
     <!-- Vendor assets -->
     <link rel="stylesheet" href="{% static 'vendor/bootstrap4/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'vendor/font_awesome_5.15/css/all.min.css' %}" />
@@ -21,13 +22,13 @@
         <p class="nav-branding"><span>P</span>H</p>
         <ul id="nav-list">
             <li>
-                <a href="index.html">
+                <a href="{% url 'home' %}">
                     <i class="fas fa-home" aria-hidden="true"></i>
                     <span class="d-none">Home</span>
                 </a>
             </li>
             <li>
-                <a href="about.html">
+                <a href="{% url 'about' %}">
                     <i class="far fa-question-circle" aria-hidden="true"></i>
                     <span class="d-none">About</span>
                 </a>

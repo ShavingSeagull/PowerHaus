@@ -1,7 +1,7 @@
 /****** About Page ******/
 
 .about-hero-img {
-    background-image: url("../../images/barbell.jpg");
+    background-image: url("../images/barbell.jpg");
 	background-color: #222222;
     background-position: center;
 	min-height: 50%;
