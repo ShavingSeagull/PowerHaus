@@ -5,3 +5,6 @@ def index(request):
 
 def about(request):
     return render(request, "home/about.html")
+
+def delivery_info(request):
+    return render(request, "home/delivery_info.html")

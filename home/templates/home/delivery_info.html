@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}PowerHaus | Delivery{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/delivery_info.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- Header with Hero Image -->
+<header class="delivery-hero-img parallax">
+    <div class="hero-text">
+        <h1>Straight to Your Door</h1>
+    </div>
+</header>
+<!-- /.Header and Hero -->
+
+<!-- Delivery Info Section -->
+<section class="container delivery-section my-5 no-floating-footer">
+    <div class="row">
+        <div class="col-sm-12 col-lg-9">
+            <h2 class="metal-bg metal-header">Delivery Information</h2>
+        </div>
+    </div>
+    <article class="row mt-5">
+        <div class="col-sm-12 col-lg-9">
+            <p class="delivery-subheader">
+                Please find the most commonly requested info regarding deliveries below. If there's anything you need to know that 
+                isn't listed here, feel free to get in touch via our contact form!
+            </p>
+        </div>
+    </article>
+    <article class="row mt-3">
+        <div class="col-sm-12 col-lg-9">
+            <div>
+                <p class="delivery-subheader">
+                    How much is delivery?
+                </p>
+                <p>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i> Delivery is £1.20 (1.20 GBP) per item in the cart, 
+                    regardless of what it is or where it's going. Delivery charges are applied after any discounts are applied.
+                </p>
+            </div>
+        </div>
+    </article>
+    <article class="row mt-3">
+        <div class="col-sm-12 col-lg-9">
+            <p class="delivery-subheader">
+                Do you delivery anywhere?
+            </p>
+            <p>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i> Not <i>anywhere</i> per sé, though we do deliver to a 
+                wide range of destinations. Click the button below to show the list of countries we delivery to directly.
+            </p>
+            <button class="btn country-list-btn" type="button">
+                <i class="fas fa-door-closed" aria-hidden="true"></i>
+            </button>
+            <div id="country-list" class="mt-3">
+                <div class="row">
+                    <ul class="col-sm-6">
+                        <li>Albania</li>
+                        <li>Algeria</li>
+                        <li>Andorra</li>
+                        <li>Argentina</li>
+                        <li>Armenia</li>
+                        <li>Australia</li>
+                        <li>Austria</li>
+                        <li>Azerbaijan</li>
+                        <li>Belarus</li>
+                        <li>Belgium</li>
+                        <li>Bermuda</li>
+                        <li>Bosnia</li>
+                        <li>Brazil</li>
+                        <li>Bulgaria</li>
+                        <li>Canada</li>
+                        <li>Chile</li>
+                        <li>China</li>
+                        <li>Colombia</li>
+                        <li>Costa Rica</li>
+                        <li>Croatia</li>
+                        <li>Cyprus</li>
+                        <li>Czech Republic</li>
+                        <li>Denmark</li>
+                        <li>Ecuador</li>
+                        <li>Egypt</li>
+                        <li>Estonia</li>
+                        <li>Finland</li>
+                        <li>France</li>
+                        <li>Georgia</li>
+                        <li>Germany</li>
+                        <li>Greece</li>
+                        <li>Guatemala</li>
+                        <li>Honduras</li>
+                        <li>Hungary</li>
+                        <li>Iceland</li>
+                        <li>India</li>
+                        <li>Indonesia</li>
+                        <li>Israel</li>
+                        <li>Italy</li>
+                        <li>Jamaica</li>
+                    </ul>
+                    <ul class="col-sm-6">
+                        <li>Japan</li>
+                        <li>Latvia</li>
+                        <li>Liechtenstein</li>
+                        <li>Lithuania</li>
+                        <li>Luxembourg</li>
+                        <li>Macedonia</li>
+                        <li>Malaysia</li>
+                        <li>Maldives</li>
+                        <li>Malta</li>
+                        <li>Mexico</li>
+                        <li>Moldova</li>
+                        <li>Monaco</li>
+                        <li>Montenegro</li>
+                        <li>Morocco</li>
+                        <li>Netherlands</li>
+                        <li>New Zealand</li>
+                        <li>Norway</li>
+                        <li>Peru</li>
+                        <li>Philippines</li>
+                        <li>Poland</li>
+                        <li>Portugal</li>
+                        <li>Republic of Korea</li>
+                        <li>Romania</li>
+                        <li>Russia</li>
+                        <li>Serbia</li>
+                        <li>Singapore</li>
+                        <li>Slovakia</li>
+                        <li>Slovenia</li>
+                        <li>South Africa</li>
+                        <li>Spain</li>
+                        <li>Sweden</li>
+                        <li>Switzerland</li>
+                        <li>Thailand</li>
+                        <li>Tunisia</li>
+                        <li>Turkey</li>
+                        <li>Ukraine</li>
+                        <li>United Arab Emirates</li>
+                        <li>United Kingdom</li>
+                        <li>United States</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mt-3">
+                If your country of residence isn't listed, don't worry! We have a great relationship with our friends over at <a href="https://www.borderlinx.com" target="_blank">Borderlinx</a>. 
+                They forward packages to over 60 countries worldwide, covering many of those that we cannot. Please get in touch with them 
+                if you need to use their services for your delivery - they will be happy to help.
+            </p>
+        </div>
+    </article>
+    <article class="row mt-3">
+        <div class="col-sm-12 col-lg-9">
+            <p class="delivery-subheader">
+                What are the delivery times like?
+            </p>
+            <p>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i> Naturally, take these timeframes with a slight grain of salt, though the typical delivery 
+                times for the various regions are as follows:
+            </p>
+            <ul class="delivery-times">
+                <li>UK - 2-3 Business days</li>
+                <li>Europe - 5-7 Business days</li>
+                <li>Americas - 12-15 Business days</li>
+                <li>Asia - 18-20 Business days</li>
+                <li>Oceania/Australasia - 20-22 Business days</li>
+            </ul>
+        </div>
+    </article>
+    <article class="row mt-3">
+        <div class="col-sm-12 col-lg-9">
+            <p class="delivery-subheader">
+                Do you have a refund policy?
+            </p>
+            <p>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i> Absolutely! If there is an issue with your purchase, we'd be happy to sort it out for you. 
+                Just be aware that with certain items, such as underwear, we can only accommodate refunds for items that arrive damanged, for obvious reasons. 
+                When you get in touch with regards to your order, give us as much detail about the issue as possible, so that we can process the request as quickly 
+                as possible.
+            </p>
+            <p>
+                You can get in touch with us <a href="#">here</a>.
+            </p>
+        </div>
+    </article>
+</section>
+<!-- /.Delivery Info Section -->
+{% endblock %}
+
+{% block custom_js %}
+<script src="{% static 'js/delivery_info.js' %}"></script>
+{% endblock %}
