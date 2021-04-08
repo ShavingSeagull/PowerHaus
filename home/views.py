@@ -8,3 +8,6 @@ def about(request):
 
 def delivery_info(request):
     return render(request, "home/delivery_info.html")
+
+def contact(request):
+    return render(request, "home/contact.html")
