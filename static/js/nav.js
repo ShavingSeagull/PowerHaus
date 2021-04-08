@@ -1,6 +1,6 @@
 $(document).ready(function() {
     const NAV = $("#main-nav");
-	const NAVHIDDENELEMS = $("#nav-list").children('li').children('a').children('span');
+	const NAV_HIDDEN_ELEMS = $("#nav-list").children('li').children('a').children('span');
 	const BUTTON = $("#nav-button");
 	const OVERLAY = $(".overlay");
 
@@ -31,12 +31,12 @@ $(document).ready(function() {
 		// the timeout. This prevents overflow occuring from the user mousing in 
 		// and out of the nav quickly
 		if ($('#main-nav:hover').length != 0) {
-			NAVHIDDENELEMS.removeClass('d-none');
+			NAV_HIDDEN_ELEMS.removeClass('d-none');
 		}
 	}
 
 	function hideElements() {
-		NAVHIDDENELEMS.addClass('d-none');
+		NAV_HIDDEN_ELEMS.addClass('d-none');
 	}
 
 	// Event handlers for mousing over on larger screens
@@ -55,13 +55,13 @@ $(document).ready(function() {
 	// Click handler for nav button on smaller screens
 	$("#nav-button").click(() => {
 		navControl();
-		NAVHIDDENELEMS.removeClass('d-none');
+		NAV_HIDDEN_ELEMS.removeClass('d-none');
 	});
 
 	// Click handler to close the nav if the user clicks outside the nav
 	$(OVERLAY).click(() => {
 		navControl();
-		NAVHIDDENELEMS.removeClass('d-none');
+		NAV_HIDDEN_ELEMS.removeClass('d-none');
 	})
 
 	// This acts as a reset in case the user changes their browser window size. 
