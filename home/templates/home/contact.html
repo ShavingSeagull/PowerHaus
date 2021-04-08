@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block custom_css %}
-<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+<link rel="stylesheet" href="{% static 'css/home/contact.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -20,7 +20,7 @@
             <h2 class="metal-bg metal-header">Contact Us</h2>
         </div>
     </div>
-    <div class="row mt-5">
+    <div class="row">
         <input type="hidden" id="fire_modal" value="{{ fire_modal }}" />
         {% if messages %}
             {% for message in messages %}
@@ -98,5 +98,5 @@
 {% endblock %}
 
 {% block custom_js %}
-<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/home/contact.js' %}"></script>
 {% endblock %}
