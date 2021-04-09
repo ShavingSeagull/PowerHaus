@@ -1,0 +1,7 @@
+/****** Account pages ******/
+.account-hero-img {
+    background-image: url("../../images/laptop.jpg");
+	background-color: #222222;
+    background-position: center;
+	min-height: 50%;
+}

@@ -1,10 +1,14 @@
 {% extends "base.html" %}
+{% load static %}
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/account/account_main.css' %}" />
+{% endblock %}
 
 {% block content %}
 <!-- Header with Hero Image -->
 <header class="account-hero-img parallax">
     <div class="hero-text">
-        <h1>All About the Power</h1>
+        <h1>Get Involved</h1>
     </div>
 </header>
 <!-- /.Header and Hero -->
