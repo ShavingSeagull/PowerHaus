@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Header with Hero Image -->
+<header class="account-hero-img parallax">
+    <div class="hero-text">
+        <h1>All About the Power</h1>
+    </div>
+</header>
+<!-- /.Header and Hero -->
+
+<!-- Account Section -->
+<section class="container account-section mt-5 no-floating-footer">
+    {% block inner_content %}
+    {% endblock %}
+</section>
+{% endblock %}
