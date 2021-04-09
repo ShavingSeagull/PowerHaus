@@ -84,6 +84,15 @@
 #usp-carousel {
 	box-shadow: 4px 4px 1px #000000;
 }
+
+.index-register-row h3 {
+	text-shadow: 1px 1px 1px #000000;
+}
+
+.index-register-row a {
+	width: 80%;
+	font-size: 1.4em;
+}
 /*** /.Why Choose Us Section ***/
 
 /*** Media Queries ***/
