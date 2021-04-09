@@ -36,6 +36,12 @@ section h2 {
 	text-shadow: 2px 2px 4px #222222;
 }
 
+.brand-btn {
+	background-color: #FFA500;
+	color: #fff;
+	font-family: life_is_okayregular, "Arial Black", sans-serif;
+}
+
 .parallax {
 	background-attachment: fixed;
 	background-position: center;
@@ -100,7 +106,7 @@ section h2 {
 #main-nav > #nav-list > li > a:hover {
 	text-decoration: none;
 	border-left: 3px solid red;
-	color: orange;
+	color: #FFA500;
 }
 
 .nav-branding {
@@ -198,7 +204,7 @@ footer a {
 footer a:hover,
 footer i:hover {
 	text-decoration: none;
-	color: orange;
+	color: #FFA500;
 }
 
 footer i {

@@ -23,12 +23,6 @@
     color: red;
 }
 
-.contact-btn {
-    background-color: orange;
-    color: #fff;
-    font-family: life_is_okayregular, "Arial Black", sans-serif;
-}
-
 /*** Media Queries ***/
 @media screen and (max-width: 560px) {
     .contact-section .metal-header {

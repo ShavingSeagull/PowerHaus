@@ -13,7 +13,7 @@
 
 .delivery-section a:hover {
     text-decoration: none;
-    color: orange;
+    color: #FFA500;
 }
 
 .delivery-section ul {
@@ -45,7 +45,7 @@ p.delivery-subheader {
 }
 
 .country-list-btn {
-    background-color: orange;
+    background-color: #FFA500;
 }
 
 #country-list {
