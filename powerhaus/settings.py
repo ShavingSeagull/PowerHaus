@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_forms_bootstrap',
     'home',
+    'profiles',
 ]
 
 MIDDLEWARE = [

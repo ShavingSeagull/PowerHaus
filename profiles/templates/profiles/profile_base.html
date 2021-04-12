@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/profiles/profiles_main.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- Header and Hero -->
+<header class="profile-hero-img parallax">
+    <div class="hero-text">
+        <h1>All about you</h1>
+    </div>
+</header>
+<!-- /.Header and Hero -->
+
+<!-- Sub-nav menu -->
+<nav id="profile-nav" class="container-fluid">
+    <div class="container">
+        <ul class="text-center">
+            <li class="d-inline px-2"><a href="#">View Profile</a></li>
+            <li class="d-inline px-2"><a href="#">Edit Profile</a></li>
+            <li class="d-inline px-2"><a href="#">Order History</a></li>
+            <li class="d-inline px-2"><a href="#">Discounts</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- /.Sub-nav menu -->
+
+<!-- Profile Section -->
+<section class="container profile-section mt-5 no-floating-footer">
+    {% block profile_content %}
+    {% endblock %}
+</section>
+<!-- /.Profile Section -->
+{% endblock %}

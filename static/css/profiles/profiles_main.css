@@ -1,0 +1,33 @@
+.profile-hero-img {
+    background-image: url("../../images/silhouette.jpg");
+	background-color: #222222;
+    background-position: center;
+	min-height: 50%;
+}
+
+#profile-nav {
+    background-image: url("../../images/metal_bg.jpg");
+    background-color: #222222;
+    background-size: cover;
+}
+
+#profile-nav ul {
+    font-family: life_is_okayregular, 'Arial Black', sans-serif;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+#profile-nav a {
+    color: #fff;
+}
+
+#profile-nav a:hover {
+    color: #FFA500;
+}
+
+/*** Media Queries ***/
+@media screen and (max-width: 560px) {
+    #profile-nav ul {
+        font-size: 1em;
+    }
+}
