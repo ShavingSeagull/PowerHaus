@@ -11,11 +11,6 @@
     font-weight: bold;
 }
 
-.delivery-section a:hover {
-    text-decoration: none;
-    color: #FFA500;
-}
-
 .delivery-section ul {
     list-style-type: none;
     font-weight: bold;

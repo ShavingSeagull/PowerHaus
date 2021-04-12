@@ -30,6 +30,11 @@ p, ul, form {
 	font-family: pontano_sans, sans-serif;
 }
 
+a:hover {
+	text-decoration: none;
+	color: #FFA500;
+}
+
 section h2 {
 	text-align: center;
 	font-size: 3em;
