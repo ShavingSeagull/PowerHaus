@@ -30,8 +30,22 @@
             <p><strong>Last login:</strong> {{ last_login }}</p>
             <p><strong>Location:</strong> {{ location }}</p>
             <br />
-            <p><strong>About me:</strong> {{ bio }}</p>
+            <p><strong>About me:</strong> {{ bio }}</p> 
         </div>
     </div>
+    {% if user == request.user %}
+    <hr class="mt-5" />
+    <div class="row">
+        <div class="col-lg-9 mb-5">
+            <h4 class="mb-4">Delivery Details</h4>
+            <p><strong>Address Line 1:</strong> {{ user.profile.address_1 }}</p>
+            <p><strong>Address Line 2:</strong> {{ user.profile.address_2 }}</p>
+            <p><strong>Town/City:</strong> {{ user.profile.city }}</p>
+            <p><strong>State/County:</strong> {{ user.profile.county }}</p>
+            <p><strong>Zip/Post Code:</strong> {{ user.profile.post_code }}</p>
+            <p><strong>Phone number:</strong> {{ user.profile.phone }}</p>
+        </div>
+    </div>
+    {% endif %}
 </article>
 {% endblock %}
