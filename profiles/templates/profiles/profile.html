@@ -25,7 +25,9 @@
         {% endif %}
         <div class="col-lg-9">
             <p><strong>Name:</strong> {{ first_name }}</p>
+            {% if user == request.user %}
             <p><strong>Email:</strong> {{ email }}</p>
+            {% endif %}
             <p><strong>Date joined:</strong> {{ date_joined }}</p>
             <p><strong>Last login:</strong> {{ last_login }}</p>
             <p><strong>Location:</strong> {{ location }}</p>
