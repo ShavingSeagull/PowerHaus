@@ -10,7 +10,8 @@
 </header>
 <!-- /.Header and Hero -->
 
-<!-- Sub-nav menu -->
+<!-- Sub-nav menu: only renders for the user's own page -->
+{% if user == request.user %}
 <nav id="profile-nav" class="container-fluid">
     <div class="container">
         <ul class="text-center">
@@ -21,6 +22,7 @@
         </ul>
     </div>
 </nav>
+{% endif %}
 <!-- /.Sub-nav menu -->
 
 <!-- Profile Section -->

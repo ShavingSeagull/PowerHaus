@@ -7,7 +7,12 @@ def view_profile(request, username):
     """
     Function to render the public profile page. Viewable by anyone who 
     is currently logged in.
+
+    Will either render the user's own profile page (which will include 
+    editing options) or the page of another user, depending on which URL 
+    fires the function.
     """
+    # Check if the username passed in matches the logged-in user
     if str(username) == str(request.user):
         current_user = request.user
         userprofile = {
