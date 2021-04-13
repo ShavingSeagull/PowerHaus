@@ -13,7 +13,7 @@ def image_upload(instance, file):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=300, blank=True, default="The user likes to keep an air of mystery about them...")
+    bio = models.TextField(max_length=300, blank=True, default="This user likes to keep an air of mystery about them...")
     location = models.CharField(max_length=40, blank=True, default="Earth")
     profile_pic = models.ImageField(upload_to=image_upload, blank=True, null=True)
     address_1 = models.CharField(max_length=80, blank=True, null=True),
