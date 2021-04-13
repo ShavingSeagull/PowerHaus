@@ -1,4 +1,5 @@
 {% extends "profiles/profile_base.html" %}
+{% block title %}{{ user }}'s Profile{% endblock %}
 {% load static %}
 
 {% block custom_css %}
@@ -8,9 +9,20 @@
 
 {% block profile_content %}
 <article class="profile-section">
-    <h3>{{ user }}'s Profile</h3>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                <strong>{{ message }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <h3 class="mb-4">{{ user }}'s Profile</h3>
     <div class="row">
-        <img class="col-lg-3 img-fluid" src="{% static 'images/blank_avatar.jpg' %}" alt="Profile Image" />
+        {% if user.profile.profile_pic %}
+            <img class="col-lg-3 img-fluid" src="{{ MEDIA_URL }}{{ user.profile.profile_pic }}" alt="Profile Image" />
+        {% else %}
+            <img class="col-lg-3 img-fluid" src="{% static 'images/blank_avatar.jpg' %}" alt="Profile Image" />
+        {% endif %}
         <div class="col-lg-9">
             <p><strong>Name:</strong> {{ first_name }}</p>
             <p><strong>Email:</strong> {{ email }}</p>

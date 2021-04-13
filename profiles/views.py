@@ -1,6 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
+from .models import Profile
+from .forms import ProfileForm
 
 @login_required
 def view_profile(request, username):
@@ -36,3 +39,30 @@ def view_profile(request, username):
             "bio": public_user.profile.bio
         }
     return render(request, "profiles/profile.html", context=userprofile)
+
+@login_required
+def edit_profile(request, username):
+    # Check to see if the logged-in user is trying to edit someone else's page
+    if str(username) != str(request.user):
+        messages.error(request, "Nice try, pal. You can only edit your own page!")
+        return redirect('home')
+
+    profile = get_object_or_404(Profile, user=request.user)
+
+    if request.method == 'POST':
+        profile_form = ProfileForm(request.POST, request.FILES, instance=profile)
+        
+        if profile_form.is_valid():
+            profile_form.save()
+            messages.success(request, "Profile updated successfully")
+            return redirect('profile', username=username)
+        else:
+            messages.error(request, "Failed to update. Please make sure the form was correct.")
+    else:
+        profile_form = ProfileForm(instance=profile)
+
+    context = {
+        "form": profile_form
+    }
+    
+    return render(request, "profiles/profile_edit.html", context=context)

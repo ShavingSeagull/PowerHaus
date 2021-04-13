@@ -16,7 +16,7 @@ class Profile(models.Model):
     bio = models.TextField(max_length=300, blank=True, default="This user likes to keep an air of mystery about them...")
     location = models.CharField(max_length=40, blank=True, default="Earth")
     profile_pic = models.ImageField(upload_to=image_upload, blank=True, null=True)
-    address_1 = models.CharField(max_length=80, blank=True, null=True),
+    address_1 = models.CharField(max_length=80, blank=True, null=True)
     address_2 = models.CharField(max_length=80, blank=True, null=True)
     city = models.CharField(max_length=40, blank=True, null=True)
     county = models.CharField(max_length=50, blank=True, null=True)

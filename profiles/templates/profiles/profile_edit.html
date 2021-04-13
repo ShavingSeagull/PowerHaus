@@ -1,0 +1,28 @@
+{% extends "profiles/profile_base.html" %}
+{% block title %}Edit Profile{% endblock %}
+{% load static %}
+{% load bootstrap_tags %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/profiles/profiles_main.css' %}" />
+{% endblock %}
+
+{% block profile_content %}
+<article class="mb-5">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger">
+                <strong>{{ message }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <h1 class="mb-4">Edit your profile</h1>
+    <div class="row">
+        <form method="POST" action="{% url 'edit_profile' request.user %}" enctype="multipart/form-data" class="col-lg-9">
+            {% csrf_token %}
+            {{ form|as_bootstrap }}
+            <button type="submit" class="btn btn-lg brand-btn mt-3">Submit</button>
+        </form>
+    </div>
+</article>
+{% endblock %}
