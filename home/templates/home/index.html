@@ -9,6 +9,13 @@
 {% block content %}
 <!-- Header with Hero Image -->
 <header class="index-hero-img parallax">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-info text-center">
+          <strong>{{ message }}</strong>
+        </div>
+      {% endfor %}
+    {% endif %}
     <div class="hero-text">
         <h1>Welcome to the Haus of Power</h1>
     </div>
