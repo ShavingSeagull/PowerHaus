@@ -66,3 +66,6 @@ def edit_profile(request, username):
     }
     
     return render(request, "profiles/profile_edit.html", context=context)
+
+# TODO: Create Order History and Discounts profile functions when respective
+# functionality has been created elsewhere

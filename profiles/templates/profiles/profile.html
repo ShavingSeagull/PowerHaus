@@ -3,8 +3,7 @@
 {% load static %}
 
 {% block custom_css %}
-<link rel="stylesheet" href="{% static 'css/profiles/profiles_main.css' %}" />
-<link rel="stylesheet" href="{% static 'css/profiles/profile.css' %}" />
+<link rel="stylesheet" href="{% static 'css/profiles/profiles.css' %}" />
 {% endblock %}
 
 {% block profile_content %}
@@ -19,9 +18,9 @@
     <h3 class="mb-4">{{ user }}'s Profile</h3>
     <div class="row">
         {% if user.profile.profile_pic %}
-            <img class="col-lg-3 img-fluid" src="{{ MEDIA_URL }}{{ user.profile.profile_pic }}" alt="Profile Image" />
+            <img class="col-lg-3 profile-img mx-auto img-fluid" src="{{ MEDIA_URL }}{{ user.profile.profile_pic }}" alt="Profile Image" />
         {% else %}
-            <img class="col-lg-3 img-fluid" src="{% static 'images/blank_avatar.jpg' %}" alt="Profile Image" />
+            <img class="col-lg-3 profile-img mx-auto img-fluid" src="{% static 'images/blank_avatar.jpg' %}" alt="Profile Image" />
         {% endif %}
         <div class="col-lg-9">
             <p><strong>Name:</strong> {{ first_name }}</p>
