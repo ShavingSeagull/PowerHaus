@@ -6,4 +6,4 @@ def view_profile(request, user):
     """
     Function to render the profile page. Requires login.
     """
-    return render(request, "profiles/profile_base.html")
+    return render(request, "profiles/profile.html")

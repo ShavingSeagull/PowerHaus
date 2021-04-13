@@ -1,0 +1,15 @@
+{% extends "profiles/profile_base.html" %}
+{% load static %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/profiles/profile.css' %}" />
+{% endblock %}
+
+{% block profile_content %}
+<article class="profile-section">
+    <h3>{{ user }}'s Profile</h3>
+    <div class="row">
+        <img class="col-lg-3 img-fluid" src="{% static 'images/blank_avatar.jpg' %}" alt="Profile Image" />
+    </div>
+</article>
+{% endblock %}
