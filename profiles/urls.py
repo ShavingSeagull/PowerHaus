@@ -3,5 +3,5 @@ from .views import view_profile
 
 urlpatterns = [
     path('<username>', view_profile, name="profile"),
-    path('my-profile/<username>', view_profile, name="my_profile"),
+    path('my-profile/edit'),
 ]
