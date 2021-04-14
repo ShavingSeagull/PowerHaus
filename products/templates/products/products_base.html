@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Header and hero -->
+<header class="product-hero-img parallax">
+    <div class="hero-text">
+        <h1>All about you</h1>
+    </div>
+</header>
+<!-- /.Header and hero -->
+
+<!-- Inner product nav -->
+<nav id="product-nav" class="container-fluid">
+    <div class="container">
+        <ul class="text-center">
+            <li class="d-inline px-2"><a href="#">Protein</a></li>
+            <li class="d-inline px-2"><a href="#">Vitamins</a></li>
+            <li class="d-inline px-2"><a href="#">Supplements</a></li>
+            <li class="d-inline px-2"><a href="#">Equipment</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- /.Inner product nav -->
+
+<!-- Product section -->
+<section class="container mt-5 no-floating-footer">
+{% block product_content %}
+{% endblock product_content %}
+</section>
+<!-- /.Product section -->
+{% endblock content %}

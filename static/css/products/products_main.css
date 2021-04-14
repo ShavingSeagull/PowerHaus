@@ -1,0 +1,28 @@
+/*** Main styles for all product pages ***/
+.product-hero-img {
+    background-image: url("../../images/silhouette.jpg");
+	background-color: #222222;
+    background-position: center;
+	min-height: 50%;
+}
+
+#product-nav {
+    background-image: url("../../images/metal_bg.jpg");
+    background-color: #222222;
+    background-size: cover;
+}
+
+#product-nav ul {
+    font-family: life_is_okayregular, 'Arial Black', sans-serif;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+#product-nav a {
+    color: #fff;
+}
+
+#product-nav a:hover {
+    color: #FFA500;
+}
+/*** /.Main Styles ***/
