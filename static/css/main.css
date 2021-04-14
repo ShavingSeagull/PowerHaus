@@ -114,6 +114,25 @@ section h2 {
 	color: #FFA500;
 }
 
+#main-nav #product-menu {
+	font-family: life_is_okayregular, "Arial Black", sans-serif;
+	list-style-type: none;
+	padding-left: 20px;
+	border-left: 3px solid red;
+}
+
+#main-nav #product-menu > li {
+	padding-top: 5px;
+}
+
+#main-nav #product-menu li > a {
+	color: #fff;
+}
+
+#main-nav #product-menu li > a:hover {
+	color: #FFA500;
+}
+
 .nav-branding {
 	position: absolute;
 	top: 70px;
@@ -239,7 +258,7 @@ footer hr {
 	
 	#main-nav {
 		left: -100%;
-		width: 180px;
+		width: 210px;
 	}
 
 	#nav-button {

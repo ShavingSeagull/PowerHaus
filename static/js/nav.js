@@ -3,6 +3,9 @@ $(document).ready(function() {
 	const NAV_HIDDEN_ELEMS = $("#nav-list").children('li').children('a').children('span');
 	const BUTTON = $("#nav-button");
 	const OVERLAY = $(".overlay");
+	const PRODUCT_MENU = $('#product-menu');
+	const PRODUCT_DROPDOWN = $('.product-dropdown');
+
 
 	function navControl() {
 		if ($(window).innerWidth() <= 1300) {
@@ -17,7 +20,7 @@ $(document).ready(function() {
 			}
 		} else {
 			if (NAV.width() == 80) {
-				NAV.css('width', '180px');
+				NAV.css('width', '210px');
 				OVERLAY.removeClass('d-none');
 			} else {
 				NAV.css('width', '80px');
@@ -29,14 +32,22 @@ $(document).ready(function() {
 	function showElements() {
 		// Checks if the mouse is still on the nav when the function fires after
 		// the timeout. This prevents overflow occuring from the user mousing in 
-		// and out of the nav quickly
-		if ($('#main-nav:hover').length != 0) {
+		// and out of the nav quickly. Doesn't apply to smaller devices.
+		if ($(window).innerWidth() > 1300) {
+			if ($('#main-nav:hover').length != 0) {
+				NAV_HIDDEN_ELEMS.removeClass('d-none');
+				PRODUCT_DROPDOWN.attr('data-toggle', 'collapse');
+			}
+		} else {
 			NAV_HIDDEN_ELEMS.removeClass('d-none');
+			PRODUCT_DROPDOWN.attr('data-toggle', 'collapse');
 		}
 	}
 
 	function hideElements() {
 		NAV_HIDDEN_ELEMS.addClass('d-none');
+		PRODUCT_MENU.removeClass('show');
+		PRODUCT_DROPDOWN.removeAttr('data-toggle');
 	}
 
 	// Event handlers for mousing over on larger screens
@@ -55,7 +66,7 @@ $(document).ready(function() {
 	// Click handler for nav button on smaller screens
 	$("#nav-button").click(() => {
 		navControl();
-		NAV_HIDDEN_ELEMS.removeClass('d-none');
+		showElements();
 	});
 
 	// Click handler to close the nav if the user clicks outside the nav
@@ -68,7 +79,7 @@ $(document).ready(function() {
 	// Unlikely to be needed much, but a safeguard nonetheless
 	$(window).resize(() => {
 		if ($(window).innerWidth() <= 1300) {
-			NAV.css({'left': '-100%', 'width': '180px'});
+			NAV.css({'left': '-100%', 'width': '210px'});
 		} else {
 			NAV.css({'left': '0', 'width': '80px'});
 		}
