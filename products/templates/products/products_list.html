@@ -3,34 +3,28 @@
 {% block title %}PowerHaus | Products{% endblock %}
 
 {% block custom_css %}
-<link rel="stylesheet" href="{% static 'css/products/products_main.css' %}" />
+<link rel="stylesheet" href="{% static 'css/products/products.css' %}" />
 {% endblock %}
 
 {% block product_content %}
+<div class="row mb-4">
+    <div class="offset-md-8 col-md-4">
+        <form class="search-form">
+            <input type="text" name="q" placeholder="Search" />
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+</div>
 <div class="row">
-    <article class="card col-lg-4" style="height: 300px;">
-        <div class="card-header">
-
-        </div>
+    {% for product in products %}
+    <article class="card col-md-6 col-lg-4 mb-3">
+        <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="Product Image" />
+        <hr />
         <div class="card-body">
-
+            <h4 class="card-title">{{ product.name }}</p>
+            <p class="card-text">£{{ product.price }}</p>
         </div>
     </article>
-    <article class="card col-lg-4" style="height: 300px;">
-        <div class="card-header">
-
-        </div>
-        <div class="card-body">
-
-        </div>
-    </article>
-    <article class="card col-lg-4" style="height: 300px;">
-        <div class="card-header">
-
-        </div>
-        <div class="card-body">
-
-        </div>
-    </article>
+    {% endfor %}
 </div>
 {% endblock %}

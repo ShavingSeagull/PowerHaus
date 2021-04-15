@@ -1,0 +1,22 @@
+[
+    {
+        "pk": 1,
+        "model": "products.category",
+        "fields": {"name": "protein", "readable_name": "Protein"}
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {"name": "vitamins", "readable_name": "Vitamins"}
+    },
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {"name": "supplements", "readable_name": "Supplements"}
+    },
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {"name": "equipment", "readable_name": "Equipment"}
+    }
+]

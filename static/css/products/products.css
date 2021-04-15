@@ -25,4 +25,23 @@
 #product-nav a:hover {
     color: #FFA500;
 }
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky-nav + .product-section {
+    padding-top: 60px;
+  }
 /*** /.Main Styles ***/
+
+/*** Product list page ***/
+.search-form {
+    float: right;
+}
+/*** /.Product list page ***/

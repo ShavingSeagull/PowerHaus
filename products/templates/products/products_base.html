@@ -14,7 +14,7 @@
 <nav id="product-nav" class="container-fluid">
     <div class="container">
         <ul class="text-center">
-            <li class="d-inline px-2"><a href="#">Protein</a></li>
+            <li class="d-inline px-2"><a href="{% url 'protein' %}">Protein</a></li>
             <li class="d-inline px-2"><a href="#">Vitamins</a></li>
             <li class="d-inline px-2"><a href="#">Supplements</a></li>
             <li class="d-inline px-2"><a href="#">Equipment</a></li>
@@ -24,9 +24,13 @@
 <!-- /.Inner product nav -->
 
 <!-- Product section -->
-<section class="container mt-5 no-floating-footer">
+<section class="container mt-5 no-floating-footer product-section">
 {% block product_content %}
 {% endblock product_content %}
 </section>
 <!-- /.Product section -->
 {% endblock content %}
+
+{% block custom_js %}
+<script src="{% static 'js/products/sticky_nav.js' %}"></script>
+{% endblock %}

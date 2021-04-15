@@ -1,0 +1,50 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "name": "The Whey", 
+            "sku": "pro10000",
+            "description": "The Whey is our premium protein blend, boasting 25g of protein, 3g of leucine, and over 5g of naturally-occurring glutamine in every serving. This protein blend contains less than 2g of carbohydrates and under 1g of fat — making it the ideal fuel for your workouts without derailing your diet.",
+            "price": 25.99,
+            "category": 1,
+            "image": "products/the_whey.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "name": "Impact Whey Protein", 
+            "sku": "pro10001",
+            "description": "Premium whey packed with 21g of protein per serving, for the everyday protein you need from a quality source. And where does this whey come from? The same cows that produce your milk and cheese — simply filtered, evaporated, and spray-dried to produce all-natural nutritionals.",
+            "price": 9.99,
+            "category": 1,
+            "image": "products/impact_whey.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "name": "Clear Whey Isolate", 
+            "sku": "pro10002",
+            "description": "Winner of ‘The Best Sports Nutrition Product’ in the European Specialist Sports Nutrition Awards 2019. Clear Whey Isolate is not just another protein shake. We’ve taken high-quality hydrolysed whey protein isolate and created a light and refreshing alternative — that’s more like juice than a milky protein shake.",
+            "price": 20.99,
+            "category": 1,
+            "image": "products/clear_whey.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "name": "Diet Protein Blend", 
+            "sku": "pro10003",
+            "description": "Our Diet Protein Blend is a highly researched formula, designed specifically to support women following a healthy lifestyle. Our Diet Protein Blend is a diet protein powder that helps to maintain and grow important muscle, making it a great training support to help you achieve your fitness goals.",
+            "price": 10.99,
+            "category": 1,
+            "image": "products/diet_protein_blend.jpg"
+        }
+    }
+]
