@@ -5,6 +5,8 @@ $(document).ready(function() {
 	const OVERLAY = $(".overlay");
 	const PRODUCT_MENU = $('#product-menu');
 	const PRODUCT_DROPDOWN = $('.product-dropdown');
+	const ACCOUNT_MENU = $('#account-menu');
+	const ACCOUNT_DROPDOWN = $('.account-dropdown');
 
 
 	function navControl() {
@@ -37,10 +39,12 @@ $(document).ready(function() {
 			if ($('#main-nav:hover').length != 0) {
 				NAV_HIDDEN_ELEMS.removeClass('d-none');
 				PRODUCT_DROPDOWN.attr('data-toggle', 'collapse');
+				ACCOUNT_DROPDOWN.attr('data-toggle', 'collapse');
 			}
 		} else {
 			NAV_HIDDEN_ELEMS.removeClass('d-none');
 			PRODUCT_DROPDOWN.attr('data-toggle', 'collapse');
+			ACCOUNT_DROPDOWN.attr('data-toggle', 'collapse');
 		}
 	}
 
@@ -48,6 +52,8 @@ $(document).ready(function() {
 		NAV_HIDDEN_ELEMS.addClass('d-none');
 		PRODUCT_MENU.removeClass('show');
 		PRODUCT_DROPDOWN.removeAttr('data-toggle');
+		ACCOUNT_MENU.removeClass('show');
+		ACCOUNT_DROPDOWN.removeAttr('data-toggle');
 	}
 
 	// Event handlers for mousing over on larger screens

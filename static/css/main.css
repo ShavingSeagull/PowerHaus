@@ -114,22 +114,26 @@ section h2 {
 	color: #FFA500;
 }
 
-#main-nav #product-menu {
+#main-nav #product-menu, 
+#main-nav #account-menu {
 	font-family: life_is_okayregular, "Arial Black", sans-serif;
 	list-style-type: none;
 	padding-left: 20px;
 	border-left: 3px solid red;
 }
 
-#main-nav #product-menu > li {
+#main-nav #product-menu > li, 
+#main-nav #account-menu > li {
 	padding-top: 5px;
 }
 
-#main-nav #product-menu li > a {
+#main-nav #product-menu li > a, 
+#main-nav #account-menu li > a {
 	color: #fff;
 }
 
-#main-nav #product-menu li > a:hover {
+#main-nav #product-menu li > a:hover, 
+#main-nav #account-menu li > a:hover {
 	color: #FFA500;
 }
 
