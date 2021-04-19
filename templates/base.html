@@ -68,6 +68,13 @@
                 </li>
                 {% endif %}
             </ul>
+            <li>
+                <a href="{% url 'cart' %}">
+                    <!-- Due to the design of the icon, it needs a smaller font-size to keep it in line -->
+                    <i class="fas fa-shopping-cart" aria-hidden="true" style="font-size: 2.1rem;"></i>
+                    <span class="d-none">Cart</span>
+                </a>
+            </li>
         </ul>
     </nav>
     <div id="nav-button">
