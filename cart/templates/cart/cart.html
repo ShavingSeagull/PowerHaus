@@ -2,6 +2,51 @@
 {% load static %}
 {% block title %}PowerHaus | Cart{% endblock %}
 
-{% block content %}
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/cart/cart.css' %}" />
+{% endblock %}
 
+{% block content %}
+<!-- Header with Hero Image -->
+<header class="cart-hero-img parallax">
+    <div class="hero-text">
+        <h1>Your Cart</h1>
+    </div>
+</header>
+<!-- /.Header and Hero -->
+
+<!-- Cart section -->
+<section class="container no-floating-footer">
+    <div class="row">
+        <div class="col-2">
+            <div class="row">
+                <p>Product Info</p>
+                <img src="" class="col-12 img-fluid" alt="Image" />
+            </div>
+        </div>
+        <div class="col-3">
+            <p>Product Name</p>
+            <p>SKU</p>
+        </div>
+        <div class="col-1">
+            <p>Price</p>
+            <p>£Actual price</p>
+        </div>
+        <div class="col-4">
+            <p>Quantity</p>
+            <div class="row">
+                <input type="number" />
+            </div>
+            <div class="row">
+                <button class="btn brand-btn">X</button>
+                <button class="btn brand-btn">X</button>
+            </div>
+        </div>
+        <div class="col-2">
+            <p>Subtotal</p>
+            <p>$Actual subtotal</p>
+        </div>
+    </div>
+</section>
+<!-- /.Cart section -->
 {% endblock %}
