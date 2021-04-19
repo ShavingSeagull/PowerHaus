@@ -6,7 +6,7 @@ def view_cart(request):
     """
     return render(request, "cart/cart.html")
 
-def add_to_cart(request):
+def add_to_cart(request, id):
     """
     Adds an item to the cart. The function is fired from the 
     product page, where the quantity is automatically set to 1. 
@@ -18,7 +18,7 @@ def add_to_cart(request):
     cart[id] = cart.get(id, quantity)
 
     request.session['cart'] = cart
-    return redirect(reverse('view-cart'))
+    return redirect(reverse('cart'))
 
 def adjust_cart(request, id):
     """
@@ -34,7 +34,7 @@ def adjust_cart(request, id):
         cart.pop(id)
 
     request.session['cart'] = cart
-    return redirect(reverse('view-cart'))
+    return redirect(reverse('cart'))
 
 
 def remove_from_cart(request, id):
@@ -45,4 +45,4 @@ def remove_from_cart(request, id):
     cart.pop(id)
 
     request.session['cart'] = cart
-    return redirect(reverse('view-cart'))
+    return redirect(reverse('cart'))

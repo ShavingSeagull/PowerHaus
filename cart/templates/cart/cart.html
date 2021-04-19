@@ -17,34 +17,79 @@
 
 <!-- Cart section -->
 <section class="container no-floating-footer">
-    <div class="row">
+    <div class="row cart-column-headers">
+        <p class="col-5 my-auto">Product Info</p>
+        <p class="col-2 my-auto">Price</p>
+        <p class="col-3 my-auto">Quantity</p>
+        <p class="col-2 my-auto">Subtotal</p>
+    </div>
+    <hr />
+    {% for item in cart_items %}
+    <div class="row cart-row">
         <div class="col-2">
             <div class="row">
-                <p>Product Info</p>
-                <img src="" class="col-12 img-fluid" alt="Image" />
+                <img src="{{ MEDIA_URL }}{{ item.product.image }}" class="col-12 img-fluid" alt="{{item.product.name}}" />
             </div>
         </div>
         <div class="col-3">
-            <p>Product Name</p>
-            <p>SKU</p>
+            <p>{{ item.product.name }}</p>
+            <p>SKU: {{ item.product.sku }}</p>
         </div>
-        <div class="col-1">
-            <p>Price</p>
-            <p>£Actual price</p>
+        <div class="col-2">
+            <p>£{{ item.product.price }}</p>
         </div>
-        <div class="col-4">
-            <p>Quantity</p>
+        <div class="col-3">
             <div class="row">
-                <input type="number" />
+                <form class="col-12">
+                    <input type="number" class="form-control" />
+                </form>
             </div>
             <div class="row">
-                <button class="btn brand-btn">X</button>
-                <button class="btn brand-btn">X</button>
+                <div class="col-12">
+                    <button class="btn brand-btn"><i class="fas fa-redo-alt"></i></button>
+                    <button class="btn brand-btn float-right"><i class="fas fa-trash-alt"></i></button>
+                </div>
             </div>
         </div>
         <div class="col-2">
-            <p>Subtotal</p>
-            <p>$Actual subtotal</p>
+            <p>£{{ item.item_total }}</p>
+        </div>
+    </div>
+    <hr />
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Only shows discount entry for account holders -->
+            {% if user.is_authenticated %}
+            <form method="POST" class="promo-code">
+                {% csrf_token %}
+                <h3 class="promo-header">Have A Promo Code?</h3>
+                <input name="discount" type="text" placeholder="Enter Code" />
+                <button type="submit" class="btn brand-btn circle-btn">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                {% for message in messages %}
+                  <p class="promo-error">{{ message }}</p>
+                {% endfor %}
+              </form>
+              {% endif %}
+        </div>
+        <div class="offset-lg-4 col-md-6 col-lg-4 cart-total">
+            <p><strong>Cart total: £{{ subtotal }}</strong></p>
+            {% if discount_total %}
+            <p>Discount: -£{{ discount_total }}</p>
+            {% endif %}
+            <p>Delivery: £{{ shipping }}</p>
+            <p><strong>Grand total: £{{ total }}</strong></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-8 col-4">
+            <a href="{% url 'protein' %}" class="btn btn-lg continue-shopping-btn">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                 Continue shopping</a>
+            <a href="#" class="btn btn-lg brand-btn">Checkout <i class="fas fa-lock" aria-hidden="true"></i></a>
         </div>
     </div>
 </section>

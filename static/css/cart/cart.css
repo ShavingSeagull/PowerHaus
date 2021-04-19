@@ -5,3 +5,53 @@
     background-position: center;
 	min-height: 50%;
 }
+
+.cart-column-headers {
+    margin-top: 20px;
+}
+
+.cart-column-headers > p {
+    font-family: life_is_okayregular, 'Arial Black', sans-serif;
+}
+
+.cart-row {
+    align-items: center;
+}
+
+.cart-total {
+    text-align: right;
+}
+
+.cart-total :last-child {
+    font-size: 1.2em;
+}
+
+.continue-shopping-btn {
+    font-family: life_is_okayregular, 'Arial Black', sans-serif;
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+
+.continue-shopping-btn:hover {
+    color: #FFA500;
+}
+
+.promo-code {
+    border: 2px solid #eee;
+    padding: 20px;
+}
+
+.promo-code > input {
+    padding: 5px;
+    border: 1px solid #CED4DA;
+    margin-bottom: 5px;
+}
+
+.promo-header {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.circle-btn {
+    border-radius: 50%;
+}

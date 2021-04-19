@@ -13,7 +13,7 @@
         <div class="col-lg-6">
             <h3 class="product-header mt-5">{{ product.name }}</h3>
             <p class="product-price">£{{ product.price }}</p>
-            <a href="#" class="btn btn-lg brand-btn"><i class="fas fa-cart-plus"></i> Add to Cart</a>
+            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-lg brand-btn"><i class="fas fa-cart-plus"></i> Add to Cart</a>
             <p class="mt-5">{{ product.description }}</p>
         </div>
     </div>
