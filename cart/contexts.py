@@ -37,7 +37,7 @@ def cart_contents(request):
     for id, quantity in cart.items():
         product = get_object_or_404(Product, pk=id)
         price_by_quantity = Decimal(quantity) * Decimal(product.price)
-        category = product.choice
+        category = product.category.name
         subtotal += price_by_quantity
 
         if code:
