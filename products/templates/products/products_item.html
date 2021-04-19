@@ -1,0 +1,21 @@
+{% extends "products/products_base.html" %}
+{% load static %}
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/products/products.css' %}" />
+{% endblock %}
+
+{% block product_content %}
+<article class="container">
+    <div class="row">
+        <img src="{{ MEDIA_URL }}{{ product.image }}" class="col-lg-6 img-fluid product-image mx-auto" alt="{{ product.name }}" />
+        <div class="col-lg-6">
+            <h3 class="product-header mt-5">{{ product.name }}</h3>
+            <p class="product-price">£{{ product.price }}</p>
+            <a href="#" class="btn btn-lg brand-btn"><i class="fas fa-cart-plus"></i> Add to Cart</a>
+            <p class="mt-5">{{ product.description }}</p>
+        </div>
+    </div>
+</article>
+{% endblock %}

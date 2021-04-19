@@ -18,10 +18,10 @@
 <div class="row">
     {% for product in products %}
     <article class="card col-md-6 col-lg-4 mb-3">
-        <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="Product Image" />
+        <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="{{ product.name }}" />
         <hr />
-        <div class="card-body">
-            <h4 class="card-title">{{ product.name }}</p>
+        <div class="card-body product-card">
+            <a href="{% url 'product_item' category=product.category.name product_id=product.id %}" class="card-title product-header">{{ product.name }}</a>
             <p class="card-text">£{{ product.price }}</p>
         </div>
     </article>

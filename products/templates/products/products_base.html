@@ -3,11 +3,37 @@
 
 {% block content %}
 <!-- Header and hero -->
-<header class="product-hero-img parallax">
+{% if url == "protein" %}
+<header class="product-hero-img product-hero-img-protein parallax">
     <div class="hero-text">
-        <h1>All about you</h1>
+        <h1>Protein</h1>
     </div>
 </header>
+{% elif url == "vitamins" %}
+<header class="product-hero-img product-hero-img-vitamins parallax">
+    <div class="hero-text">
+        <h1>Vitamins</h1>
+    </div>
+</header>
+{% elif url == "supplements" %}
+<header class="product-hero-img product-hero-img-supplements parallax">
+    <div class="hero-text">
+        <h1>Supplements</h1>
+    </div>
+</header>
+{% elif url == "equipment" %}
+<header class="product-hero-img product-hero-img-equipment parallax">
+    <div class="hero-text">
+        <h1>Equipment</h1>
+    </div>
+</header>
+{% else %}
+<header class="product-hero-img parallax">
+    <div class="hero-text">
+        <h1>Products</h1>
+    </div>
+</header>
+{% endif %}
 <!-- /.Header and hero -->
 
 <!-- Inner product nav -->
@@ -15,9 +41,9 @@
     <div class="container">
         <ul class="text-center">
             <li class="d-inline px-2"><a href="{% url 'protein' %}">Protein</a></li>
-            <li class="d-inline px-2"><a href="#">Vitamins</a></li>
-            <li class="d-inline px-2"><a href="#">Supplements</a></li>
-            <li class="d-inline px-2"><a href="#">Equipment</a></li>
+            <li class="d-inline px-2"><a href="{% url 'vitamins' %}">Vitamins</a></li>
+            <li class="d-inline px-2"><a href="{% url 'supplements' %}">Supplements</a></li>
+            <li class="d-inline px-2"><a href="{% url 'equipment' %}">Equipment</a></li>
         </ul>
     </div>
 </nav>

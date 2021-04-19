@@ -35,9 +35,9 @@
             </li>
             <ul class="collapse" id="product-menu">
                 <li><a href="{% url 'protein' %}">Protein</a></li>
-                <li><a href="#">Vitamins</a></li>
-                <li><a href="#">Supplements</a></li>
-                <li><a href="#">Equipment</a></li>
+                <li><a href="{% url 'vitamins' %}">Vitamins</a></li>
+                <li><a href="{% url 'supplements' %}">Supplements</a></li>
+                <li><a href="{% url 'equipment' %}">Equipment</a></li>
               </ul>
             <li>
                 {% if user.is_authenticated %}

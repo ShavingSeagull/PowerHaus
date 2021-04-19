@@ -1,9 +1,25 @@
 /*** Main styles for all product pages ***/
 .product-hero-img {
-    background-image: url("../../images/silhouette.jpg");
+    background-image: url("../../images/products_header.jpg");
 	background-color: #222222;
     background-position: center;
 	min-height: 50%;
+}
+
+.product-hero-img-protein {
+    background-image: url("../../images/protein_header.jpg");
+}
+
+.product-hero-img-vitamins {
+    background-image: url("../../images/vitamins_header.jpg");
+}
+
+.product-hero-img-supplements {
+    background-image: url("../../images/supplements_header.jpg");
+}
+
+.product-hero-img-equipment {
+    background-image: url("../../images/equipment_header.jpg");
 }
 
 #product-nav {
@@ -39,5 +55,41 @@
 /*** /.Main Styles ***/
 
 /*** Product list page ***/
+.card-body:hover {
+    box-shadow: #222 2px 2px 1px;
+    transition: 0.2s;
+}
 
+.product-card > a, 
+.product-card > p {
+    font-family: life_is_okayregular, 'Arial Black', sans-serif;
+    color: #222;
+}
+
+.product-card > a {
+    font-size: 1.3em;
+}
+
+.product-card > a:hover {
+    color: #FFA500;
+}
 /*** /.Product list page ***/
+
+/*** Product Item page ***/
+.product-header {
+    text-transform: uppercase;
+}
+
+.product-price {
+    font-family: life_is_okayregular, 'Arial Black', sans-serif;
+    font-size: 1.2em;
+}
+/*** /.Product Item page ***/
+
+/*** Media Queries ***/
+@media screen and (min-width: 768px) {
+    .product-image {
+        max-width: 50%;
+        height: auto;
+    }
+}
