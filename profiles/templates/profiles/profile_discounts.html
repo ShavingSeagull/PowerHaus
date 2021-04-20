@@ -1,0 +1,13 @@
+{% extends "profiles/profile_base.html" %}
+{% block title %}{{ user }}'s Discounts{% endblock %}
+{% load static %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/profiles/profiles.css' %}" />
+{% endblock %}
+
+{% block profile_content %}
+<article class="profile-section">
+    <h3 class="mb-4">{{ user }}'s Discounts</h3>
+</article>
+{% endblock %}

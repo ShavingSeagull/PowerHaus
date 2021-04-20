@@ -28,16 +28,21 @@ def view_profile(request, username):
             "bio": current_user.profile.bio
         }
     else:
-        public_user = User.objects.get(username=username)
-        userprofile = {
-            "user": public_user,
-            "first_name": public_user.first_name,
-            "email": public_user.email,
-            "date_joined": public_user.date_joined,
-            "last_login": public_user.last_login,
-            "location": public_user.profile.location,
-            "bio": public_user.profile.bio
-        }
+        try:
+            # Checks if user actually exists in the DB
+            public_user = User.objects.get(username=username)
+            userprofile = {
+                "user": public_user,
+                "first_name": public_user.first_name,
+                "email": public_user.email,
+                "date_joined": public_user.date_joined,
+                "last_login": public_user.last_login,
+                "location": public_user.profile.location,
+                "bio": public_user.profile.bio
+            }
+        except User.DoesNotExist:
+            messages.error(request, "Sorry, that user doesn't seem to exist!")
+            return redirect('home')
     return render(request, "profiles/profile.html", context=userprofile)
 
 @login_required
@@ -66,6 +71,13 @@ def edit_profile(request, username):
     }
     
     return render(request, "profiles/profile_edit.html", context=context)
+
+@login_required
+def discount_page(request, username):
+    if str(username) != str(request.user):
+        messages.error(request, "Nice try, pal. You can only view your own discounts!")
+        return redirect('home')
+    return render(request, "profiles/profile_discounts.html")
 
 # TODO: Create Order History and Discounts profile functions when respective
 # functionality has been created elsewhere
