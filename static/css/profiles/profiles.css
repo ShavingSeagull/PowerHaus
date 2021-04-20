@@ -40,6 +40,27 @@
 }
 /*** /.Profile view ***/
 
+/*** Discount view ***/
+.discount-card {
+    box-shadow: 2px 2px 1px #222;
+}
+
+.discount-card > .card-header {
+    color: #fff;
+}
+
+.discount-card > .card-footer > p {
+    font-family: life_is_okayregular, 'Arial Black', sans-serif;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.discount-card > .card-footer > p > span {
+    color: #FFA500;
+    font-size: 1.3em;
+}
+/*** /.Discount view ***/
+
 /*** Media Queries ***/
 @media screen and (max-width: 560px) {
     #profile-nav ul {

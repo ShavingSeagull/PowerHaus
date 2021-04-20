@@ -9,5 +9,30 @@
 {% block profile_content %}
 <article class="profile-section">
     <h3 class="mb-4">{{ user }}'s Discounts</h3>
+    <p>
+        Please see below for all your active discounts. Don't forget - 
+        these can be used unlimited times while they're active! Only one code per order, though.
+    </p>
+    <div class="row">
+        {% if discounts %}
+            {% for discount in discounts %}
+            <div class="col-12 col-sm-6 col-lg-4 my-4">
+                <div class="discount-card card">
+                    <h5 class="card-header metal-bg">{{ discount.name }}</h5>
+                    <div class="card-body">
+                        <p><strong>Expires:</strong> {{ discount.expiry_date }}</p>
+                        <p><strong>Products:</strong> {{ discount.product_type }}</p>
+                        <p><strong>Discount:</strong> {{ discount.discount }}%</p>
+                    </div>
+                    <div class="card-footer metal-bg">
+                        <p class="my-auto">Code: <span>{{ discount.code }}</span></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="col-12 mt-3"><strong>There are no discounts to show. Check back soon!</strong></p>
+        {% endif %}
+    </div>
 </article>
 {% endblock %}

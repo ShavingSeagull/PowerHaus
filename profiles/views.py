@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Profile
 from .forms import ProfileForm
+from promocodes.models import PromoCode
 
 @login_required
 def view_profile(request, username):
@@ -77,7 +78,13 @@ def discount_page(request, username):
     if str(username) != str(request.user):
         messages.error(request, "Nice try, pal. You can only view your own discounts!")
         return redirect('home')
-    return render(request, "profiles/profile_discounts.html")
+    
+    discounts = PromoCode.objects.filter(active=True)
+    context = {
+        "discounts": discounts
+    }
 
-# TODO: Create Order History and Discounts profile functions when respective
+    return render(request, "profiles/profile_discounts.html", context=context)
+
+# TODO: Create Order History when respective
 # functionality has been created elsewhere
