@@ -9,11 +9,21 @@
 {% block profile_content %}
 <article class="profile-section">
     {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success">
-                <strong>{{ message }}</strong>
-            </div>
-        {% endfor %}
+        <div class="profile-messages">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
     {% endif %}
     <h3 class="mb-4">{{ user }}'s Profile</h3>
     <div class="row">

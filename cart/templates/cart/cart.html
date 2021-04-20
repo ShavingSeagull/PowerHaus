@@ -70,11 +70,25 @@
                 <button type="submit" class="btn brand-btn circle-btn">
                     <i class="fas fa-chevron-right" aria-hidden="true"></i>
                 </button>
-                {% for message in messages %}
-                  <p class="promo-error">{{ message }}</p>
-                {% endfor %}
-              </form>
-              {% endif %}
+                {% if messages %}
+                    <div class="cart-messages">
+                        {% for message in messages %}
+                            {% with message.level as level %}
+                                {% if level == 40 %}
+                                    {% include 'includes/toasts/toast_error.html' %}
+                                {% elif level == 30 %}
+                                    {% include 'includes/toasts/toast_warning.html' %}
+                                {% elif level == 25 %}
+                                    {% include 'includes/toasts/toast_success.html' %}
+                                {% else %}
+                                    {% include 'includes/toasts/toast_info.html' %}
+                                {% endif %}
+                            {% endwith %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </form>
+            {% endif %}
         </div>
         <div class="col-sm-6 col-lg-8 cart-total mt-3 mt-sm-0">
             <p><strong>Cart total: £{{ subtotal }}</strong></p>

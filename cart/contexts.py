@@ -52,6 +52,7 @@ def cart_contents(request):
                 if promocode.product_type == category or promocode.product_type == 'all':
                     discount = Decimal((promocode.discount * price_by_quantity) / Decimal(100)).quantize(Decimal('.01'))
                     discount_total += discount
+                    messages.success(request, "Promo Code added!")
 
             except PromoCode.DoesNotExist:
                 messages.error(request, "Promo Code is invalid")

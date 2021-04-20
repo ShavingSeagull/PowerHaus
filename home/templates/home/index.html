@@ -9,18 +9,31 @@
 {% block content %}
 <!-- Header with Hero Image -->
 <header class="index-hero-img parallax">
-    {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert-info text-center">
-          <strong>{{ message }}</strong>
-        </div>
-      {% endfor %}
-    {% endif %}
     <div class="hero-text">
         <h1>Welcome to the Haus of Power</h1>
     </div>
 </header>
 <!-- /.Header and Hero -->
+
+<!-- Django messages shown as Bootstrap Toasts -->
+{% if messages %}
+    <div class="django-messages">
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+{% endif %}
+<!-- /.Django messages as BS Toasts -->
 
 <!-- Product Range Section -->
 <section class="container-fluid product-range-section">

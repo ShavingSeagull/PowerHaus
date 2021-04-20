@@ -1,4 +1,10 @@
 /*** Main styles for all profile pages ***/
+.profile-messages {
+    position: absolute;
+    right: 15px;
+    z-index: 100;
+}
+
 .profile-hero-img {
     background-image: url("../../images/silhouette.jpg");
 	background-color: #222222;
