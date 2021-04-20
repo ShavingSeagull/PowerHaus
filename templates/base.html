@@ -73,6 +73,9 @@
                     <!-- Due to the design of the icon, it needs a smaller font-size to keep it in line -->
                     <i class="fas fa-shopping-cart" aria-hidden="true" style="font-size: 2.1rem;"></i>
                     <span class="d-none">Cart</span>
+                    {% if product_count > 0 %}
+                    <span class="d-none"><label class="badge badge-warning">{{ product_count }}</label></span>
+                    {% endif %}
                 </a>
             </li>
         </ul>
