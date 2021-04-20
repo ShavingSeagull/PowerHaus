@@ -16,9 +16,9 @@
 <!-- /.Header and Hero -->
 
 <!-- Cart section -->
-<section class="container no-floating-footer">
+<section class="container no-floating-footer mb-2 mb-sm-3">
     <div class="row cart-column-headers">
-        <p class="col-5 my-auto">Product Info</p>
+        <p class="col-4 col-sm-5 my-auto">Product Info</p>
         <p class="col-2 my-auto">Price</p>
         <p class="col-3 my-auto">Quantity</p>
         <p class="col-2 my-auto">Subtotal</p>
@@ -26,12 +26,12 @@
     <hr />
     {% for item in cart_items %}
     <div class="row cart-row">
-        <div class="col-2">
+        <div class="d-none d-sm-block col-sm-2">
             <div class="row">
                 <img src="{{ MEDIA_URL }}{{ item.product.image }}" class="col-12 img-fluid" alt="{{item.product.name}}" />
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-4 col-sm-3">
             <p>{{ item.product.name }}</p>
             <p>SKU: {{ item.product.sku }}</p>
         </div>
@@ -44,9 +44,9 @@
                     {% csrf_token %}
                     <input type="number" min="0" max="999" value="{{ item.quantity }}" class="form-control" name="quantity" />
                 </form>
-                <div class="col-12">
-                    <button class="btn brand-btn cart-submit-btn"><i class="fas fa-redo-alt"></i></button>
-                    <a href="{% url 'remove_from_cart' item.product.id %}" class="btn brand-btn float-right">
+                <div class="col-12 mt-1">
+                    <a class="btn brand-btn cart-submit-btn d-block d-sm-inline-block mb-1 mb-sm-0"><i class="fas fa-redo-alt"></i></a>
+                    <a href="{% url 'remove_from_cart' item.product.id %}" class="btn brand-btn d-block d-sm-inline-block cart-delete-btn">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                 </div>
@@ -76,7 +76,7 @@
               </form>
               {% endif %}
         </div>
-        <div class="col-sm-6 col-lg-8 cart-total">
+        <div class="col-sm-6 col-lg-8 cart-total mt-3 mt-sm-0">
             <p><strong>Cart total: £{{ subtotal }}</strong></p>
             {% if discount_total %}
             <p>Discount: -£{{ discount_total }}</p>
@@ -86,11 +86,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="offset-8 col-4">
-            <a href="{% url 'protein' %}" class="btn btn-lg continue-shopping-btn">
+        <div class="col-12 ">
+            <a href="{% url 'protein' %}" class="btn btn-lg continue-shopping-btn d-block d-sm-inline-block">
                 <i class="fas fa-chevron-left" aria-hidden="true"></i>
                  Continue shopping</a>
-            <a href="#" class="btn btn-lg brand-btn float-right">Checkout <i class="fas fa-lock" aria-hidden="true"></i></a>
+            <a href="#" class="btn btn-lg brand-btn d-block d-sm-inline-block checkout-btn">Checkout <i class="fas fa-lock" aria-hidden="true"></i></a>
         </div>
     </div>
 </section>

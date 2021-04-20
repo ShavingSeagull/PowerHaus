@@ -52,6 +52,18 @@
     padding-top: 0;
 }
 
+.promo-error {
+    color: red;
+}
+
 .circle-btn {
     border-radius: 50%;
+}
+
+/*** Media queries ***/
+@media screen and (min-width: 576px) {
+    .checkout-btn, 
+    .cart-delete-btn {
+        float: right;
+    }
 }
