@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block title %}PowerHaus | Checkout{% endblock %}
 
 {% block custom_css %}
@@ -7,78 +8,42 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<!-- Header with Hero Image -->
+<header class="checkout-hero-img parallax">
+    <div class="hero-text">
+        <h1>Ring it up</h1>
+    </div>
+</header>
+<!-- /.Header and Hero -->
+
+<!-- Checkout section -->
+<section class="container checkout-section mt-5 no-floating-footer">
     <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Checkout</h2>
-            <hr>
+        <div class="col-lg-7 mb-5">
+            <h2 class="metal-bg metal-header">Checkout</h2>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12 col-lg-6 order-lg-last mb-5">
-            <p class="text-muted">Order Summary ({{ product_count }})</p>
-            <div class="row">
-                <div class="col-7 offset-2">
-                    <p class="mb-1 mt-0 small text-muted">Item</p>
-                </div>
-                <div class="col-3 text-right">
-                    <p class="mb-1 mt-0 small text-muted">Subtotal</p>
-                </div>
-            </div>
-            {% for item in bag_items %}
-                <div class="row">
-                    <div class="col-2 mb-1">
-                        <a href="{% url 'product_item' item.product.id %}">
-                            {% if item.product.image %}
-                                <img class="w-100" src="{{ item.product.image }}" alt="{{ product.name }}">
-                            {% else %}
-                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                            {% endif %}
-                        </a>
-                    </div>
-                    <div class="col-7">
-                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                        <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                    </div>
-                    <div class="col-3 text-right">
-                        <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-            <hr class="my-0">
-            <div class="row text-black text-right">
-                <div class="col-7 offset-2">
-                    <p class="my-0">Order Total:</p>
-                    <p class="my-0">Delivery:</p>
-                    <p class="my-0">Grand Total:</p>
-                </div>
-                <div class="col-3">
-                    <p class="my-0">${{ subtotal | floatformat:2 }}</p>
-                    <p class="my-0">${{ shipping | floatformat:2 }}</p>
-                    <p class="my-0"><strong>${{ total | floatformat:2 }}</strong></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-6">
+        <!-- Move to be last in the row on small devices using flex ordering -->
+        <div class="col-lg-7 order-1 order-lg-0">
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
-                <fieldset class="rounded px-3 mb-5">
+                <fieldset class="rounded mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
-                    {{ order_form.full_name | as_bootstrap }}
-                    {{ order_form.email | as_bootstrap }}
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
                 </fieldset>
-                <fieldset class="rounded px-3 mb-5">
+                <fieldset class="rounded mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
-                    {{ order_form.phone_number | as_bootstrap }}
-                    {{ order_form.street_address1 | as_bootstrap }}
-                    {{ order_form.street_address2 | as_bootstrap }}
-                    {{ order_form.town_or_city | as_bootstrap }}
-                    {{ order_form.county | as_bootstrap }}
-                    {{ order_form.postcode | as_bootstrap }}
-                    {{ order_form.country | as_bootstrap }}
+                    {{ order_form.phone | as_crispy_field }}
+                    {{ order_form.address_1 | as_crispy_field }}
+                    {{ order_form.address_2 | as_crispy_field }}
+                    {{ order_form.city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.post_code | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
                     <div class="form-check form-check-inline float-right mr-0">
                         {% if user.is_authenticated %}
                             <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
@@ -91,13 +56,12 @@
                         {% endif %}
                     </div>
                 </fieldset>
-                <fieldset class="px-3">
+                <fieldset>
                     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                    <!-- A Stripe card element will go here -->
+                    <!-- Stripe card element is created in JS -->
                     <div class="mb-3" id="card-element"></div>
-                    <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <!-- Pass the client secret to the view to get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
 
@@ -108,7 +72,7 @@
                         </span>
                         <span class="font-weight-bold">Adjust Cart</span>
                     </a>
-                    <button id="submit-button" class="btn btn-black rounded-0">
+                    <button id="submit-button" class="btn brand-btn btn-black rounded-0">
                         <span class="font-weight-bold">Complete Order</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
@@ -118,13 +82,44 @@
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>
                         </span>
-                        <span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
+                        <span>Your card will be charged <strong>£{{ total|floatformat:2 }}</strong></span>
                     </p>
                 </div>
             </form>
         </div>
+        <div class="offset-lg-1 col-lg-4 order-0 order-lg-1 mb-4">
+            <h5>Checklist</h5>
+            <div class="row">
+                <p class="col-9 small text-muted">Item</p>
+                <p class="col-3 small text-muted text-right">Subtotal</p>
+            </div>
+            {% for item in cart_items %}
+                <div class="row">
+                    <div class="col-9">
+                        <div class="row">
+                            <p class="col-12 my-0"><strong>{{ item.product.name }}</strong></p>
+                            <p class="col-12 my-0 small text-muted my-0">Qty: {{ item.quantity }}</p>
+                        </div>
+                    </div>
+                    <p class="col-3 my-0 small text-muted text-right">£{{ item.item_total }}</p>
+                </div>
+                <hr class="mt-0" />
+            {% endfor %}
+            <div class="row">
+                <div class="col-9">
+                    <p class="my-0 text-right">Subtotal:</p>
+                    <p class="my-0 text-right">Delivery:</p>
+                    <p class="my-0 text-right">Total:</p>
+                </div>
+                <div class="col-3">
+                    <p class="my-0 text-right">£{{ subtotal }}</p>
+                    <p class="my-0 text-right">£{{ shipping }}</p>
+                    <p class="my-0 text-right"><strong>£{{ total }}</strong></p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 <div id="loading-overlay">
     <h1 class="text-light logo-font loading-spinner">
         <span class="icon">

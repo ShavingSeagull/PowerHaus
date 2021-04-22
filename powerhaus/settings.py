@@ -36,11 +36,13 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_forms_bootstrap',
+    'crispy_forms',
     'home',
     'profiles',
     'products',
     'cart',
     'promocodes',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +56,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'powerhaus.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -152,3 +156,8 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Stripe
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
+STRIPE_CURRENCY = "GBP"
