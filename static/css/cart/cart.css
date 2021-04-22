@@ -1,9 +1,4 @@
 /***** Cart Page *****/
-.cart-messages {
-    position: absolute;
-    z-index: 100;
-}
-
 .cart-hero-img {
     background-image: url("../../images/cart_header.jpg");
 	background-color: #222222;

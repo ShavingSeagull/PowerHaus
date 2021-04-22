@@ -15,6 +15,10 @@ def cart_contents(request):
     remain human-readable.
     """
 
+    # Uses a message variable passed to the template to prevent the same Django message 
+    # getting displayed on every page due to a lack of render or redirect in the context
+    message = None
+    message_shown = False
     cart = request.session.get('cart', {})
     code = request.POST.get('discount')
     if not code:
@@ -52,10 +56,12 @@ def cart_contents(request):
                 if promocode.product_type == category or promocode.product_type == 'all':
                     discount = Decimal((promocode.discount * price_by_quantity) / Decimal(100)).quantize(Decimal('.01'))
                     discount_total += discount
-                    messages.success(request, "Promo Code added!")
+                    #messages.success(request, "Promo Code added!")
+                    message = {"success": "Promo Code added!"}
 
             except PromoCode.DoesNotExist:
-                messages.error(request, "Promo Code is invalid")
+                #messages.error(request, "Promo Code is invalid")
+                message = {"error": "Promo Code is invalid"}
 
 
         product_count += quantity
@@ -72,4 +78,12 @@ def cart_contents(request):
     shipping *= product_count
     total = Decimal(subtotal - discount_total + shipping).quantize(Decimal('.01'))
 
-    return {'cart_items': cart_items, 'subtotal': subtotal, 'discount_total': discount_total, 'shipping': shipping, 'total': total, 'product_count': product_count}
+    return {
+        'cart_items': cart_items, 
+        'subtotal': subtotal, 
+        'discount_total': discount_total, 
+        'shipping': shipping, 
+        'total': total, 
+        'product_count': product_count, 
+        'cart_message': message
+    }
