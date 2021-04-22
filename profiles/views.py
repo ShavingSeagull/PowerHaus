@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.utils import timezone
 from .models import Profile
 from .forms import ProfileForm
 from promocodes.models import PromoCode
@@ -79,7 +80,10 @@ def discount_page(request, username):
         messages.error(request, "Nice try, pal. You can only view your own discounts!")
         return redirect('home')
     
-    discounts = PromoCode.objects.filter(active=True)
+    now = timezone.now()
+    discounts = PromoCode.objects.filter(start_date__lte=now,
+                                            expiry_date__gte=now,
+                                            active=True)
     context = {
         "discounts": discounts
     }

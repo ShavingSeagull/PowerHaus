@@ -108,11 +108,17 @@
             <div class="row">
                 <div class="col-9">
                     <p class="my-0 text-right">Subtotal:</p>
+                    {% if discount_total %}
+                    <p class="my-0 text-right text-danger">Discount:</p>
+                    {% endif %}
                     <p class="my-0 text-right">Delivery:</p>
                     <p class="my-0 text-right">Total:</p>
                 </div>
                 <div class="col-3">
                     <p class="my-0 text-right">£{{ subtotal }}</p>
+                    {% if discount_total %}
+                    <p class="my-0 text-right text-danger">-£{{ discount_total }}</p>
+                    {% endif %}
                     <p class="my-0 text-right">£{{ shipping }}</p>
                     <p class="my-0 text-right"><strong>£{{ total }}</strong></p>
                 </div>

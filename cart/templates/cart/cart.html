@@ -24,6 +24,7 @@
         <p class="col-2 my-auto">Subtotal</p>
     </div>
     <hr />
+    {% if product_count > 0 %}
     {% for item in cart_items %}
     <div class="row cart-row">
         <div class="d-none d-sm-block col-sm-2">
@@ -93,7 +94,7 @@
         <div class="col-sm-6 col-lg-8 cart-total mt-3 mt-sm-0">
             <p><strong>Cart total: £{{ subtotal }}</strong></p>
             {% if discount_total %}
-            <p>Discount: -£{{ discount_total }}</p>
+            <p class="text-danger">Discount: -£{{ discount_total }}</p>
             {% endif %}
             <p>Delivery: £{{ shipping }}</p>
             <p><strong>Grand total: £{{ total }}</strong></p>
@@ -103,10 +104,22 @@
         <div class="col-12 ">
             <a href="{% url 'protein' %}" class="btn btn-lg continue-shopping-btn d-block d-sm-inline-block">
                 <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                 Continue shopping</a>
-            <a href="{% url 'checkout' %}" class="btn btn-lg brand-btn d-block d-sm-inline-block checkout-btn">Checkout <i class="fas fa-lock" aria-hidden="true"></i></a>
+                 Continue shopping
+            </a>
+            <a href="{% url 'checkout' %}" class="btn btn-lg brand-btn d-block d-sm-inline-block checkout-btn">
+                Checkout 
+                <i class="fas fa-lock" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
+    {% else %}
+    <div class="row">
+        <p class="col-12 mt-4">
+            <i class="fas fa-exclamation-circle text-danger"></i>
+            <strong>There is nothing in your cart at the moment.</strong>
+        </p>
+    </div>
+    {% endif %}
 </section>
 <!-- /.Cart section -->
 {% endblock %}
