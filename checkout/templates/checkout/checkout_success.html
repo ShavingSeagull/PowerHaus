@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}PowerHaus | Order Success{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/cart/cart.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- Header with Hero Image -->
+<header class="checkout-success-hero-img parallax">
+    <div class="hero-text">
+        <h1>Your Order</h1>
+    </div>
+</header>
+<!-- /.Header and Hero -->
+
+<section class="container no-floating-footer">
+    <div class="row">
+        <div class="col-12 my-5">
+            <h3 class="metal-bg metal-header">Thank you for your order!</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9">
+            <p class="order-number">Your order number is: {{ order.order_number }}</p>
+            <p class="text-muted">Ordered on {{ order.date }}</p>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-lg-9">
+            <p class="text-muted">Order details:</p>
+            {% for item in order.lineitems.all %}
+                <div class="row cart-row">
+                    <figure class="my-0 d-none d-sm-block col-sm-2">
+                        <img src="{{ MEDIA_URL }}{{ item.product.image }}" class="img-fluid" alt="{{ item.product.name }}" />
+                    </figure>
+                    <div class="my-0 col-5">
+                        <p>{{ item.product.name }}</p>
+                    </div>
+                    <div class="my-0 col-1">
+                        <p>{{ item.quantity }}</p>
+                    </div>
+                    <div class="my-0 col-1">
+                        <p>@</p>
+                    </div>
+                    <div class="my-0 col-2">
+                        <p>£{{ item.product.price }}</p>
+                    </div>
+                </div>
+                <hr />
+            {% endfor %}
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <p class="mb-0">Subtotal: £{{ order.subtotal }}</p>
+                {% if order.discount %}
+                    <p class="my-0 text-danger">Discount: -£{{ order.discount }}</p>
+                {% endif %}
+                <p class="my-0">Delivery: £{{ order.shipping }}</p>
+                <p class="mt-0"><strong>Total: £{{ order.total }}</strong></p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 mb-4">
+                <p class="text-muted">Order will be sent to:</p>
+                <p class="my-0">{{ order.address_1 }}</p>
+                {% if order.address_2 %}
+                    <p class="my-0">{{ order.address_2 }}</p>
+                {% endif %}
+                <p class="my-0">{{ order.city }}</p>
+                {% if order.county %}
+                    <p class="my-0">{{ order.county }}</p>
+                {% endif %}
+                <p class="my-0">{{ order.post_code }}</p>
+                <p class="my-0">{{ order.country }}</p>
+            </div>
+            <div class="col-sm-6 mb-4">
+                <p class="text-muted">Your details:</p>
+                <p class="my-0">{{ order.full_name }}</p>
+                <p class="my-0">{{ order.email }}</p>
+                <p class="my-0">{{ order.phone }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
