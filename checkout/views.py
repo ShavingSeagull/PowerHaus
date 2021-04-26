@@ -38,6 +38,7 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    current_cart = cart_contents(request)
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
@@ -59,18 +60,22 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
-            order.original_cart = json.dumps(bag)
+            order.original_cart = json.dumps(cart)
+            order.subtotal = current_cart['subtotal']
+            order.shipping = current_cart['shipping']
+            order.total = current_cart['total']
+            if current_cart['discount_total']:
+                order.discount = current_cart['discount_total']
             order.save()
             for item_id, item_data in cart.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=item_data,
+                    )
+                    order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your cart wasn't "
@@ -94,7 +99,6 @@ def checkout(request):
                            "There's nothing in your cart at the moment")
             return redirect(reverse('protein'))
 
-        current_cart = cart_contents(request)
         total = current_cart['total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
@@ -146,7 +150,7 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
+        profile = Profile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
@@ -154,15 +158,15 @@ def checkout_success(request, order_number):
         # Save the user's info
         if save_info:
             profile_data = {
-                'default_phone_number': order.phone_number,
+                'phone': order.phone,
                 'default_country': order.country,
-                'default_postcode': order.postcode,
-                'default_town_or_city': order.town_or_city,
-                'default_street_address1': order.street_address1,
-                'default_street_address2': order.street_address2,
-                'default_county': order.county,
+                'post_code': order.post_code,
+                'city': order.city,
+                'address_1': order.address_1,
+                'address_2': order.address_2,
+                'county': order.county,
             }
-            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            user_profile_form = ProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
@@ -170,8 +174,8 @@ def checkout_success(request, order_number):
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
-    if 'bag' in request.session:
-        del request.session['bag']
+    if 'cart' in request.session:
+        del request.session['cart']
 
     template = 'checkout/checkout_success.html'
     context = {

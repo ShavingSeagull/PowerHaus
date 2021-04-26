@@ -21,7 +21,8 @@ class Order(models.Model):
     address_2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=50, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    #shipping = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
+    discount = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    shipping = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     subtotal = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
@@ -32,18 +33,6 @@ class Order(models.Model):
         Create a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
-
-    def update_total(self):
-        """
-        Update the total each time a line item is added,
-        accounting for shipping.
-        """
-        self.subtotal = self.lineitems.aggregate(
-            Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        # Shipping is fixed at 1.20 per item
-        self.shipping = self.lineitems.quantity * 1.20
-        self.total = self.subtotal + self.delivery_cost
-        self.save()
 
     def save(self, *args, **kwargs):
         """
