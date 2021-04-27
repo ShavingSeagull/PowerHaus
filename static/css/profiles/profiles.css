@@ -66,6 +66,10 @@
     color: #FFA500;
     font-size: 1.3em;
 }
+
+.order-info-row {
+    align-items: center;
+}
 /*** /.Discount view ***/
 
 /*** Media Queries ***/
@@ -77,5 +81,15 @@
     .profile-img {
         max-height: 300px;
         width: auto;
+    }
+
+    .order-number-header {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .order-info-text {
+        font-size: 0.8em;
     }
 }

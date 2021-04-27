@@ -115,4 +115,26 @@ def order_history(request, username):
     }
     return render(request, "profiles/profile_orders.html", context=context)
 
-# TODO: Create a view and template to view the details of each order
+@login_required
+def order_info(request, username, order_num):
+    """
+    Displays the detailed information of an individual order
+    """
+    if str(username) != str(request.user):
+        messages.error(request, "Nice try, pal. You can only view your own orders!")
+        return redirect('home')
+    
+    order = get_object_or_404(Order, order_number=order_num)
+    line_item = OrderLineItem.objects.filter(order=order)
+
+    item_count = 0
+    for item in line_item:
+        item_count += item.quantity
+    
+    context = {
+        "order": order,
+        "line_item": line_item,
+        "item_count": item_count
+    }
+
+    return render(request, "profiles/profile_orders_info.html", context=context)
