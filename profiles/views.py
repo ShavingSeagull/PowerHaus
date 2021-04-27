@@ -6,6 +6,7 @@ from django.utils import timezone
 from .models import Profile
 from .forms import ProfileForm
 from promocodes.models import PromoCode
+from checkout.models import Order, OrderLineItem
 
 @login_required
 def view_profile(request, username):
@@ -49,6 +50,9 @@ def view_profile(request, username):
 
 @login_required
 def edit_profile(request, username):
+    """
+    Allows the user to edit their profile
+    """
     # Check to see if the logged-in user is trying to edit someone else's page
     if str(username) != str(request.user):
         messages.error(request, "Nice try, pal. You can only edit your own page!")
@@ -76,6 +80,9 @@ def edit_profile(request, username):
 
 @login_required
 def discount_page(request, username):
+    """
+    Displays all of the current active discounts
+    """
     if str(username) != str(request.user):
         messages.error(request, "Nice try, pal. You can only view your own discounts!")
         return redirect('home')
@@ -90,5 +97,20 @@ def discount_page(request, username):
 
     return render(request, "profiles/profile_discounts.html", context=context)
 
-# TODO: Create Order History when respective
-# functionality has been created elsewhere
+@login_required
+def order_history(request, username):
+    """
+    Displays all of the user's orders to date
+    """
+    if str(username) != str(request.user):
+        messages.error(request, "Nice try, pal. You can only view your own orders!")
+        return redirect('home')
+    
+    now = timezone.now()
+    user = get_object_or_404(Profile, user=request.user)
+    orders = Order.objects.filter(user_profile=user.id).order_by('-date')
+
+    context = {
+        "orders": orders
+    }
+    return render(request, "profiles/profile_orders.html", context=context)

@@ -40,8 +40,8 @@
 }
 /*** /.Profile view ***/
 
-/*** Discount view ***/
-.discount-card {
+/*** Discount & Order History view ***/
+.profile-card {
     /* Shadow style taken from: https://css-tricks.com/almanac/properties/b/box-shadow */
     box-shadow: 
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -52,17 +52,17 @@
     0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-.discount-card > .card-header {
+.profile-card > .card-header {
     color: #fff;
 }
 
-.discount-card > .card-footer > p {
+.profile-card > .card-footer > p {
     font-family: life_is_okayregular, 'Arial Black', sans-serif;
     font-size: 1.2em;
     color: #fff;
 }
 
-.discount-card > .card-footer > p > span {
+.profile-card > .card-footer > p > span {
     color: #FFA500;
     font-size: 1.3em;
 }

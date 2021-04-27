@@ -1,0 +1,35 @@
+{% extends "profiles/profile_base.html" %}
+{% block title %}{{ user }}'s Orders{% endblock %}
+{% load static %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/profiles/profiles.css' %}" />
+{% endblock %}
+
+{% block profile_content %}
+<article class="profile-section">
+    <h3 class="mb-4">{{ user }}'s Order History</h3>
+    <p>Please see below for all of your placed orders to date, starting with the most recent.</p>
+    <div class="row">
+        {% for order in orders %}
+        <div class="col-12 col-lg-4 my-4">
+            <div class="profile-card card">
+                <h5 class="card-header metal-bg">{{ order.date }}</h5>
+                <div class="card-body">
+                    <p><strong>Order #:</strong> {{ order.order_number }}</p>
+                    <p><strong>Delivery:</strong> £{{ order.shipping }}</p>
+                    {% if order.discount %}
+                        <p><strong>Amount saved:</strong> £{{ order.discount }}</p>
+                    {% else %}
+                        <p><strong>Amount saved:</strong> £0.00</p>
+                    {% endif %}
+                </div>
+                <div class="card-footer metal-bg">
+                    <p class="my-auto">Total: <span>£{{ order.total }}</span></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</article>
+{% endblock %}
