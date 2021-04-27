@@ -114,3 +114,5 @@ def order_history(request, username):
         "orders": orders
     }
     return render(request, "profiles/profile_orders.html", context=context)
+
+# TODO: Create a view and template to view the details of each order

@@ -56,13 +56,13 @@
     color: #fff;
 }
 
-.profile-card > .card-footer > p {
+.profile-card > .card-footer p {
     font-family: life_is_okayregular, 'Arial Black', sans-serif;
     font-size: 1.2em;
     color: #fff;
 }
 
-.profile-card > .card-footer > p > span {
+.profile-card > .card-footer p > span {
     color: #FFA500;
     font-size: 1.3em;
 }

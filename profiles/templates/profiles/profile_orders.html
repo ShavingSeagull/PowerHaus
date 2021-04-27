@@ -25,7 +25,10 @@
                     {% endif %}
                 </div>
                 <div class="card-footer metal-bg">
-                    <p class="my-auto">Total: <span>£{{ order.total }}</span></p>
+                    <div class="row">
+                        <p class="my-auto col-8">Total: <span>£{{ order.total }}</span></p>
+                        <a href="#" class="btn brand-btn col-4">View order</a>
+                    </div>
                 </div>
             </div>
         </div>
