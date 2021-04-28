@@ -161,3 +161,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 STRIPE_CURRENCY = "GBP"
+
+#reCAPTCHA
+RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_SECRET_KEY = os.environ.get("RECAPTCHA_SECRET_KEY")
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']

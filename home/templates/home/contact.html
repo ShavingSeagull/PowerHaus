@@ -4,6 +4,7 @@
 
 {% block custom_css %}
 <link rel="stylesheet" href="{% static 'css/home/contact.css' %}" />
+<script src="https://www.google.com/recaptcha/api.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -24,11 +25,25 @@
     </div>
     <div class="row">
         <input type="hidden" id="fire_modal" value="{{ fire_modal }}" />
+        <!-- Django messages shown as Bootstrap Toasts -->
         {% if messages %}
+        <div class="django-messages">
             {% for message in messages %}
-                {{ message }}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
             {% endfor %}
+        </div>
         {% endif %}
+        <!-- /.Django messages as BS Toasts -->
     </div>
     <div class="row mt-5">
         <p class="col-lg-9">
@@ -73,7 +88,8 @@
                 <label for="message">Message (<span>*</span>) :</label>
                 <textarea name="message" id="message" class="form-control" placeholder="Your message here..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-lg brand-btn">Send</button>
+            <div class="g-recaptcha" data-sitekey="{{ captcha_key }}"></div>
+            <button type="submit" class="btn btn-lg brand-btn mt-3">Send</button>
         </form>
     </div>
 </section>
