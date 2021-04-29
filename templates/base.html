@@ -93,6 +93,33 @@
     {% endblock %}
     <!-- /.Main Content -->
 
+    <!-- GDPR Cookies Modal - Bootstrap modal -->
+    <div class="modal fade" id="gdpr-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">GDPR Cookies Consent</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        PowerHaus uses very little in the way of cookies to power the site and make everything work. 
+                        There are some essential ones we use, to keep hold of your username when you login to your account 
+                        for example (if you choose to be remembered for next time), but that's about it. There are no ads or third party 
+                        tools that use cookies on the site.
+                    </p>
+                    <p>
+                        The small number of internal cookies used on PowerHaus are all essential for the site to function correctly. 
+                        We still need your consent though.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="gdpr-btn" class="btn brand-btn" data-dismiss="modal">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.GDPR Cookies Modal -->
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -122,9 +149,11 @@
     <script src="{% static 'vendor/bootstrap4/js/bootstrap.min.js' %}"></script>
     <!-- Custom scripts -->
     <script src="{% static 'js/nav.js' %}"></script>
+    <script src="{% static 'js/cookies.js' %}"></script>
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
+    <!-- Injected JS -->
     {% block custom_js %}
     {% endblock %}
 </body>
