@@ -30,9 +30,10 @@ p, ul, form {
 	font-family: pontano_sans, sans-serif;
 }
 
-a:hover {
+/* :not prevents overwriting <a> tags that have Bootstrap btn styling */
+a:hover:not(.btn) {
 	text-decoration: none;
-	color: #FFA500;
+	color: #FFA500 !important;
 }
 
 section h2 {
