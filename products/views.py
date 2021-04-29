@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import resolve
 from django.db.models import Q
+from django.utils import timezone
 from .models import Product
+from reviews.models import Review
 
 def products(request):
     """
@@ -32,8 +34,21 @@ def product_item(request, category, product_id):
     header image.
     """
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product, date__lte=timezone.now()).order_by('-date')
+    good_total = 0
+    bad_total = 0
+
+    for score in reviews:
+        if score.rating == "good":
+            good_total += 1
+        else:
+            neg_total += 1
+
     context = {
         "product": product,
-        "url": category
+        "url": category,
+        "ratings": reviews,
+        "good_total": good_total,
+        "bad_total": bad_total
     }
     return render(request, "products/products_item.html", context=context)
