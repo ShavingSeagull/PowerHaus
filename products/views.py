@@ -42,12 +42,12 @@ def product_item(request, category, product_id):
         if score.rating == "good":
             good_total += 1
         else:
-            neg_total += 1
+            bad_total += 1
 
     context = {
         "product": product,
         "url": category,
-        "ratings": reviews,
+        "reviews": reviews,
         "good_total": good_total,
         "bad_total": bad_total
     }

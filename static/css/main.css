@@ -48,6 +48,18 @@ section h2 {
 	font-family: life_is_okayregular, "Arial Black", sans-serif;
 }
 
+.brand-btn-cancel {
+	background-color: #808080;
+	color: #fff;
+	font-family: life_is_okayregular, "Arial Black", sans-serif;
+}
+
+.brand-btn-danger {
+	background-color: #CC0000;
+	color: #fff;
+	font-family: life_is_okayregular, "Arial Black", sans-serif;
+}
+
 .parallax {
 	background-attachment: fixed;
 	background-position: center;
