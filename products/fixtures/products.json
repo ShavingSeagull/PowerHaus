@@ -5,10 +5,10 @@
         "fields": {
             "name": "The Whey", 
             "sku": "pro10000",
-            "description": "The Whey is our premium protein blend, boasting 25g of protein, 3g of leucine, and over 5g of naturally-occurring glutamine in every serving. This protein blend contains less than 2g of carbohydrates and under 1g of fat — making it the ideal fuel for your workouts without derailing your diet.",
+            "description": "The Whey is our premium protein blend, boasting 25g of protein, 3g of leucine, and over 5g of naturally-occurring glutamine in every serving. This protein blend contains less than 2g of carbohydrates and under 1g of fat - making it the ideal fuel for your workouts without derailing your diet. The Whey has been created using expert filtration systems and the finest ingredients, designed to provide the fuel your muscles need to grow. This premium protein blend is for anyone serious about achieving their fitness goals and wanting one of the highest-quality protein shakes available. The Whey is suitable for vegetarians and is also free from gluten-containing ingredients.",
             "price": 25.99,
             "category": 1,
-            "image": "products/the_whey.jpg"
+            "image": "products/protein/the_whey.jpg"
         }
     },
     {
@@ -17,34 +17,466 @@
         "fields": {
             "name": "Impact Whey Protein", 
             "sku": "pro10001",
-            "description": "Premium whey packed with 21g of protein per serving, for the everyday protein you need from a quality source. And where does this whey come from? The same cows that produce your milk and cheese — simply filtered, evaporated, and spray-dried to produce all-natural nutritionals.",
+            "description": "Premium whey packed with 21g of protein per serving, for the everyday protein you need from a quality source. And where does this whey come from? The same cows that produce your milk and cheese - simply filtered, evaporated, and spray-dried to produce all-natural nutritionals. Ranked Grade A by independent tester Labdoor for both quality and value, Impact Whey Protein is officially certified as one of the best protein powders on the market. It provides your body with convenient, high-quality protein, which contributes to the growth and maintenance of muscle mass — making sure you’re getting the protein you need, each and every day. It also includes 3.6g of glutamine and all the essential amino acids, including 4.5g of BCAAs - these naturally occur in protein which helps to build and repair new muscle - so you’re always ready for the next session.",
             "price": 9.99,
             "category": 1,
-            "image": "products/impact_whey.jpg"
+            "image": "products/protein/impact_whey_protein.jpg"
         }
     },
     {
         "pk": 3,
         "model": "products.product",
         "fields": {
-            "name": "Clear Whey Isolate", 
+            "name": "Impact Whey Isolate", 
             "sku": "pro10002",
-            "description": "Winner of ‘The Best Sports Nutrition Product’ in the European Specialist Sports Nutrition Awards 2019. Clear Whey Isolate is not just another protein shake. We’ve taken high-quality hydrolysed whey protein isolate and created a light and refreshing alternative — that’s more like juice than a milky protein shake.",
-            "price": 20.99,
+            "description": "Packed with 23g of protein per serving, this superior-quality blend is ideal to provide your muscles with the protein they need for growth and maintenance, so that you can keep making progress with your fitness goals. Whey isolate is a form of protein that’s been highly refined for purity - resulting in a high protein content, with low sugar and zero fat. It’s put through an expert purifying process to keep maximum protein integrity — resulting in a 90% protein content. This means it’s a shake with minimal additional extras, which can make it the best option for those on a low-carb diet for example. To help you return to the gym on form for the next session, Impact Whey Isolate also contains essential amino acids, including BCAAs - these naturally occur in protein, which helps to build and repair new muscle.",
+            "price": 27.99,
             "category": 1,
-            "image": "products/clear_whey.jpg"
+            "image": "products/protein/impact_whey_isolate.jpg"
         }
     },
     {
         "pk": 4,
         "model": "products.product",
         "fields": {
-            "name": "Diet Protein Blend", 
+            "name": "Impact Diet Whey", 
             "sku": "pro10003",
-            "description": "Our Diet Protein Blend is a highly researched formula, designed specifically to support women following a healthy lifestyle. Our Diet Protein Blend is a diet protein powder that helps to maintain and grow important muscle, making it a great training support to help you achieve your fitness goals.",
+            "description": "A delicious shake that delivers 39g of protein per serving, along with other ingredients specifically chosen to support your weight-loss programme. Impact Diet Whey is a whey protein powder that has been specially developed to provide a boost of protein without unnecessary carbs. We've also added extra glutamine, which naturally occurs in protein, which helps to build and repair new muscle — important when you’re looking to tone up. Delivering 39g of protein per serving, Impact Diet Whey is ideal for supporting the maintenance of muscle mass when on a weight-loss journey. It also includes green tea extract, CLA powder, and choline - a key diet ingredient that supports normal fat metabolism.",
+            "price": 5.99,
+            "category": 1,
+            "image": "products/protein/impact_diet_whey.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "name": "Clear Whey Isolate", 
+            "sku": "pro10004",
+            "description": "Winner of ‘The Best Sports Nutrition Product’ in the European Specialist Sports Nutrition Awards 2019. Clear Whey Isolate is not just another protein shake. We’ve taken high-quality hydrolysed whey protein isolate and created a light and refreshing alternative - that’s more like juice than a milky protein shake. Each delicious serving is packed with 20g of protein, that helps to grow and maintain important muscle - important whatever your fitness goal. And, with just 0.1g of fat, 0.3g of sugar, and less than 90 calories per shake, it’s the perfect way to stay hydrated throughout the day - without undoing all of your hard work.",
+            "price": 20.99,
+            "category": 1,
+            "image": "products/protein/clear_whey_isolate.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "name": "Diet Protein Blend", 
+            "sku": "pro10005",
+            "description": "Our Diet Protein Blend is a highly researched formula, designed specifically to support women following a healthy lifestyle. Our Diet Protein Blend is a diet protein powder that helps to maintain and grow important muscle, making it a great training support to help you achieve your fitness goals. It mixes into an indulgent, tasty shake packed full of high-quality nutrients, such as choline and niacin to support your metabolism, making this diet whey protein a super-convenient addition to your everyday diet.",
             "price": 10.99,
             "category": 1,
-            "image": "products/diet_protein_blend.jpg"
+            "image": "products/protein/diet_protein_blend.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "name": "Protein Pancake Mix", 
+            "sku": "pro10006",
+            "description": "With a blend of high-quality protein from milk, whey, and egg proteins, this pancake mix provides you with both fast and slow-digesting nutrients — making it the perfect choice for a filling breakfast. Containing a massive 34g of protein per serving, these easy-to-make pancakes are a delicious way to support your fitness goals — helping you hit your protein requirements to grow and maintain important muscle.",
+            "price": 4.99,
+            "category": 1,
+            "image": "products/protein/protein_pancake_mix.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "name": "Baked Cookie", 
+            "sku": "pro10007",
+            "description": "Winner of ‘The Cleanest Dirty Treat’ in the Men’s Health 2019 Sports Nutrition Awards! Baked with quality ingredients, including coconut oil and pea protein — so they’re totally vegan-friendly — each one of these cookies is also sprinkled with dark chocolate chunks. With 13g of protein per cookie, these are a delicious treat that will satisfy sweet-tooth cravings and support your training goals at the same time — helping you reach daily protein requirements to grow and maintain important muscle.",
+            "price": 16.99,
+            "category": 1,
+            "image": "products/protein/baked_cookie.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "name": "High Protein Bars", 
+            "sku": "pro10008",
+            "description": "Our High-Protein Bar has been created to combine excellent nutritionals with delicious taste. With 30g of high-quality protein packed into every single serving, the High-Protein Bar is the perfect snack to help you grow and maintain muscle — supporting your fitness goals, whatever your ambition. Also, it’s packed with 23g of carbs, while being high in fibre and low in sugar, making it the perfect post-workout refuel after a tough session.",
+            "price": 20.99,
+            "category": 1,
+            "image": "products/protein/protein_bar.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "name": "Protein Chocolate", 
+            "sku": "pro10009",
+            "description": "Our deliciously rich bars have 62% less sugar than standard supermarket alternatives — making them the perfect high-protein treat to satisfy your chocolate cravings, without undoing the effort you put into training. With 19g of quality whey protein isolate, this chocolate will support your training progress, rather than setting it back — helping you to grow and maintain important muscle, which is vital for any fitness goal.",
+            "price": 4.99,
+            "category": 1,
+            "image": "products/protein/protein_chocolate.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "name": "The Whey (sample)", 
+            "sku": "pro10010",
+            "description": "Our unique protein blend deliver 25g protein, 3g leucine, and over 5g of naturally occurring glutamine per serving — all with less than 2g carbs and 1g fat — for the greatest everyday shake. Created using expert filtration systems and the finest ingredients, THE Whey has been specially developed to give you the protein you need, to grow and maintain important muscle.",
+            "price": 1.20,
+            "category": 1,
+            "image": "products/protein/the_whey_sample.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "name": "Vitamin C Plus", 
+            "sku": "vit10000",
+            "description": "Vitamin C is an essential water-soluble vitamin that’s involved in a huge range of vital functions in the body, making our Vitamin C Tablets ideal for hitting your daily requirements — helping you to feel your best every day. Just one of our Vitamin C Tablets contain 100% of your recommended daily amount of vitamin C, and we’ve added bioflavonoids which enhance the action of this essential vitamin — making them super-efficient and convenient to add to your routine.",
+            "price": 5.99,
+            "category": 2,
+            "image": "products/vitamins/vitamin_c.jpg"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "name": "Vitamin B12", 
+            "sku": "vit10001",
+            "description": "Our tablets make it super-easy for you to hit you recommended requirements of the essential vitamins B12 — especially anyone following a plant-based lifestyle, as vitamin B12 is primarily found in meat, eggs, and dairy. This supplement offers a high-strength source of vitamin B12 from cyanocobalamin, making it the ideal way to keep on top of daily intake, whatever your dietary choices. Each of our tablets is packed with 1000µg of vitamin B12, which plays an important role in the function of your immune system, nervous system5 and metabolism, and is therefore essential for your general wellbeing.",
+            "price": 4.99,
+            "category": 2,
+            "image": "products/vitamins/vitamin_b12.jpg"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "name": "Vitamin D3", 
+            "sku": "vit10002",
+            "description": "It’s not always easy to get your daily requirement of vitamin D as it mainly comes from sun exposure, and isn’t present in many foods. Our convenient softgel capsules are a weather-proof way to get all the great health benefits of vitamin D. Vitamin D3 is a fat-soluble vitamin D called cholecalciferol, that’s essential for maintaining healthy bones, muscles, supporting the immune system, and helping the body absorb calcium — which helps to support normal muscle function. Your body can make vitamin D, but this comes from exposure to sunlight — that’s why it’s known as the sunshine vitamin.",
+            "price": 6.99,
+            "category": 2,
+            "image": "products/vitamins/vitamin_d3.jpg"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "name": "Vitamin A", 
+            "sku": "vit10003",
+            "description": "Vitamin A, also known as retinol, is a fat-soluble vitamin that has several important functions in maintaining overall health and wellbeing — making this a great addition to your diet. One of the most well-known benefits of vitamin A is its ability to help sustain and support your eyesight — helping maintain normal vision1 that’s essential for everyday life. Plus, it helps you keep your body’s natural defences high, so you can look and feel your best when training hard.",
+            "price": 2.99,
+            "category": 2,
+            "image": "products/vitamins/vitamin_a.jpg"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "name": "Vitamin K", 
+            "sku": "vit10004",
+            "description": "It’s an essential nutrient that plays a key role in helping the blood clot, which can affect the way we bruise and bleed — making our super-convenient tablets a perfect addition to your diet. Not only that, it also helps support your bones, keeping you feeling strong in and out of the gym — so you can give your all to training. If you’re looking for extra support for your bones, try our Vitamin D3 Capsules — the sunshine vitamin, that offers a weather proof way to get all the health benefits of this essential nutrient.",
+            "price": 3.99,
+            "category": 2,
+            "image": "products/vitamins/vitamin_k.jpg"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "name": "Vitamin E", 
+            "sku": "vit10005",
+            "description": "Vitamin E is an essential vitamin that plays a vital role in many of your body’s functions. A natural antioxidant, it’s a great support whether you’re a sprinter or a weight lifter — making our softgels perfect for your workout goals. Offering a range of health benefits, including protecting your cells from oxidative stress — vitamin E is an important addition to your daily diet. It can be found in nuts, seeds, and vegetable oils, but our softgels are a quick and convenient way to hit your recommended intake, however hectic your schedule is.",
+            "price": 8.99,
+            "category": 2,
+            "image": "products/vitamins/vitamin_e.jpg"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "name": "Daily Multivitamin", 
+            "sku": "vit10006",
+            "description": "Vitamins are essential to maintaining overall health and wellbeing, performing many important functions in the body — making it vital you hit your recommended daily requirements. Although vitamins and minerals are really important for our health, many people aren’t getting enough through their diet alone. And, that’s where we come in....We’ve packed seven essential vitamins including vitamins A, C, D3, E, as well as thiamine, riboflavin, and niacin into one super-convenient tablet — helping to support your everyday wellbeing while keeping you on top of your game while maintaining your busy lifestyle.",
+            "price": 3.99,
+            "category": 2,
+            "image": "products/vitamins/multivitamin.jpg"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "name": "Zinc", 
+            "sku": "vit10007",
+            "description": "Our Zinc tablets are an easy-to-take everyday supplement that’ll help you to feel fit and ready to take on whatever your busy schedule throws at you. Not only are they a great support for your general wellbeing, with zinc playing a key role in supporting your immune system, metabolism and cognitive function, but they’ll help to keep you looking your best on the outside too — maintaining your hair, skin and nails. And that’s not all! Zinc also plays an important part in protein synthesis, maintaining your bones, and contributing to normal fertility.",
+            "price": 4.99,
+            "category": 2,
+            "image": "products/vitamins/zinc.jpg"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "name": "Alpha Men", 
+            "sku": "vit10008",
+            "description": "Alpha Men Multivitamin is our advanced formula, which contains essential vitamins and minerals to support you with your goals. Each tablet includes calcium, vitamin D, selenium, pantothenic acid (vitamin B5), biotin, as well as energising natural extracts — boosting your everyday wellbeing, while you train hard, and keep up with a busy lifestyle. Our Alpha Men Multivitamin has been specially tailored to make it the perfect supplement for the active male. Our Alpha Men Multivitamin tablets offer a wide range of benefits within the body, making them a great support for both your physical and mental health — with biotin contributing to psychological function, and copper protecting cells from oxidative stress.",
+            "price": 14.99,
+            "category": 2,
+            "image": "products/vitamins/alpha_men.jpg"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+            "name": "Active Women", 
+            "sku": "vit10009",
+            "description": "Our Active Women Multivitamin is a comprehensive and convenient everyday vitamin tablet, developed specifically for women's unique nutritional needs. It's a great way to boost your vitamin and mineral intake and complements your normal diet. Whatever your fitness goals, this blend is ideal to help you stay on top of your game and keep mentally sharp during a busy lifestyle. Our Active Women Multivitamin contains specifically chosen ingredients that help your body perform at its best — from keeping your defences high after a tough workout, to supporting your metabolism. We’ve also added the digestive enzymes amylase and lipase, as well as super-popular plant extracts to help you feel invigorated and full of energy — important whatever your fitness ambitions.",
+            "price": 12.99,
+            "category": 2,
+            "image": "products/vitamins/active_women.jpg"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+            "name": "Defence Shots", 
+            "sku": "vit10010",
+            "description": "Looking for a convenient way to support your immune system? Our Defence Shots are an innovative blend of essential vitamins and minerals, including vitamin C and zinc, which help to keep your natural defences working as they should. Topping up on essential vitamins and minerals has never tasted so good — these delicious orange & mango flavour Defence Shots are packed with a whole host of key nutrients that support your body. This includes vitamin C which helps to support the immune system, protect cells from oxidative stress, and plays a role in teeth, skin & gum health — helping you feel your best from the inside out. They’re an ideal start to your day, as they’re also bursting with vitamin B6 and B12 which help to reduce tiredness and fatigue. With zero sugar, fat, or calories, they’re a perfect fit for any lifestyle, no matter what training goals you’re working towards.",
+            "price": 25.99,
+            "category": 2,
+            "image": "products/vitamins/defence_shot.jpg"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+            "name": "5-HTP", 
+            "sku": "sup10000",
+            "description": "It’s super-important to get the hours of sleep you need. Whether you’re a committed gym-goer or simply living a busy modern lifestyle, it’s crucial to get the right amount of rest to restore your body. 5-HTP (5-hydroxy L-tryptophan) is a compound that the body makes from the amino acid, tryptophan. A precursor to the neurotransmitter serotonin, it’s involved in many of the body’s important functions. Because it’s made from an amino acid that must come from food sources, which can sometimes be costly and time consuming, our convenient-to-take 5-HTP tablets help supplement your balanced diet to make sure you’re getting the amount you need.",
+            "price": 16.99,
+            "category": 3,
+            "image": "products/supplements/5_htp.jpg"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+            "name": "Cod Liver Oil", 
+            "sku": "sup10001",
+            "description": "Our convenient-to-take capsules are perfect to consume on the go as part of a busy lifestyle. Cod Liver Oil is derived from the liver of cod (gadidae). It’s a rich source of the omega-3 essential fatty acids EPA and DHA, as well as being a good source of vitamin D and vitamin A — boasting great health benefits for everyday wellbeing. Omega-3 fatty acids are essential fats that we must get from our diet. They’re found naturally in cold-water fish and shellfish, plant and nut oils, walnuts, flaxseed, and algae oils — so it can be difficult to get enough from what you eat alone.",
+            "price": 5.99,
+            "category": 3,
+            "image": "products/supplements/cod_liver.jpg"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "products.product",
+        "fields": {
+            "name": "Diet Aid", 
+            "sku": "sup10002",
+            "description": "Our weight-loss capsules have been specifically formulated with vitamins and minerals tailored to women’s requirements, and contain a blend of stimulants, including caffeine and guarana extract, to help boost your performance in the gym. Crammed with key ingredients such as kola nut to support weight loss, caffeine to pump up your performance, and pantothenic acid to keep tiredness at bay — it’s the ideal fuel to keep you sharp and at the top of your game. Plus, the pantothenic acid will help to support your metabolism, making these convenient capsules the perfect addition to your routine to push you closer to your weight-loss goals.",
+            "price": 13.99,
+            "category": 3,
+            "image": "products/supplements/diet_aid.jpg"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+            "name": "Digestion", 
+            "sku": "sup10003",
+            "description": "Feel your best from the inside out with our Digestion capsules — each one contains a unique blend of friendly bacteria, lactobacillus, along with chloride which produces hydrochloric acid in the stomach to help break down your food. Your digestive system is one of the most active parts of your body, so it shouldn’t be overlooked. These capsules are an easy way to keep on top of your gut health, as they contain a complex of ten types of lactobacillus, which is friendly bacteria that’s found naturally in our digestive system. Plus, we have added chloride, which helps to break down proteins in your food through the production of hydrochloric acid.",
+            "price": 13.99,
+            "category": 3,
+            "image": "products/supplements/digestion.jpg"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "products.product",
+        "fields": {
+            "name": "Evening Primrose Oil", 
+            "sku": "sup10004",
+            "description": "The evening primrose flower has seeds which can be pressed to provide linoleic acid, which helps to support your cholesterol levels. Each convenient softgel provides 730mg of linoleic acid, making it really simple for you to boost your daily intake - great to support a healthy lifestyle. They’re ideal for anyone looking to support their general health and wellbeing.",
+            "price": 7.99,
+            "category": 3,
+            "image": "products/supplements/evening_primrose.jpg"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "products.product",
+        "fields": {
+            "name": "Iron & Folic Acid", 
+            "sku": "sup10005",
+            "description": "Our powerful blend of essential vitamins and minerals including iron, folic acid, copper, riboflavin, vitamins A and C — boasting great health benefits for everyday wellbeing. The perfect boost to your busy lifestyle, each super-convenient tablet packs 100% of your recommended daily intake of iron, folic acid, copper, and vitamin C, helping to reduce tiredness and keep you sharp while supporting your natural defences. Vitamins and minerals are nutrients your body needs to perform important functions and stay on top of your game. Although most people will get all the nutrients they need from a balanced diet, supplements can give you the extra boost you need.",
+            "price": 8.99,
+            "category": 3,
+            "image": "products/supplements/iron_folic_acid.jpg"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "products.product",
+        "fields": {
+            "name": "Joint", 
+            "sku": "sup10006",
+            "description": "Support your body through every training session with these expertly-developed capsules — each one contains turmeric, ginger, flaxseed oil and rosehip extract, MSM, and vitamin C which helps to maintain bone and joint health. A hectic workout schedule and busy lifestyle can take its toll on your body, so it’s important to get the right nutrients in your diet to support it. Our Joint capsules are an easy way to stay topped up on popular natural extracts such as flaxseed oil and rosehip extract, as well as MSM. Over time, naturally occurring collagen production slows down, which can make our joint cartilage thinner and more prone to damage. With a unique formulation, our Joint tablets contain vitamin C to support collagen formation for normal bone and cartilage function. Plus, it helps to fight fatigue - perfect for helping you to give your all, session after session.",
+            "price": 11.99,
+            "category": 3,
+            "image": "products/supplements/joint.jpg"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "products.product",
+        "fields": {
+            "name": "Krill Oil", 
+            "sku": "sup10007",
+            "description": "Extracted from an Antarctic krill species, this oil is rich in omega-3 essential fatty acids, which play an important role in normal heart function - helping you stay fit and healthy to give your all to training sessions. Omega-3 contains eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA) which are essential fatty acids that help with normal heart function. It can be difficult and expensive to get enough of these in your diet from food alone, making our softgels a super-convenient way to hit daily requirements. And, our capsules contain astaxanthin which is an antioxidant.",
+            "price": 19.99,
+            "category": 3,
+            "image": "products/supplements/krill_oil.jpg"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "products.product",
+        "fields": {
+            "name": "Essential Omega-3", 
+            "sku": "sup10008",
+            "description": "Omega-3 is an essential fatty acid that your body can’t make itself, so you have to get from your diet. It’s found naturally in fish oil - meaning it can be difficult to get enough of it from what you eat alone. Omega-3 contains EPA (eicosapentaenoic acid) and DHA (docosahexaenoic acid) which both play an important role in heart health - making this a great supplement to support your general wellbeing, as well as fitness goals. If you don’t think that you eat enough fish or other omega-3 food sources, our convenient Essential Omega-3 supplement is a great, fuss-free addition to your routine. Plus, it can be much more cost-effective.",
+            "price": 5.99,
+            "category": 3,
+            "image": "products/supplements/omega3.jpg"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "products.product",
+        "fields": {
+            "name": "Relax", 
+            "sku": "sup10009",
+            "description": "Rest easy with our Relax capsules - featuring a unique blend of vitamins, minerals, and natural extracts such as lemon balm, a popular ingredient in relaxing herbal teas. Having a good night’s sleep can make a huge difference to your productivity and mood the next day. These convenient capsules are ideal to support an active lifestyle, with zinc to support the immune system and protect cells from oxidative stress - meaning you can take on each day feeling on top form. Plus, we’ve added natural extracts chamomile and lemon balm too. ",
+            "price": 13.99,
+            "category": 3,
+            "image": "products/supplements/relax.jpg"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "products.product",
+        "fields": {
+            "name": "Fat Calipers", 
+            "sku": "equ10000",
+            "description": "Our Fat Callipers are a precision instrument that use skinfold thickness to measure body fat. They come with a convenient measurement chart for males and females, ages 18-65, which can be used as a guideline for calculating body fat. Ideal when you’re trying to get shaped and toned.",
+            "price": 2.99,
+            "category": 4,
+            "image": "products/equipment/calipers.jpg"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "products.product",
+        "fields": {
+            "name": "Lifting Gloves", 
+            "sku": "equ10001",
+            "description": "Improve comfort and grip during workouts with our Lifting Gloves - providing a snug and supportive fit - helping you with your weight-lifting goals. While callouses are often a sign of a gym rat, they're easily avoided with a pair of lifting gloves. One size fits all.",
+            "price": 10.99,
+            "category": 4,
+            "image": "products/equipment/gloves.jpg"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "products.product",
+        "fields": {
+            "name": "Heavy Lifting Grips", 
+            "sku": "equ10002",
+            "description": "Our Padded Heavy Lifting Grips are ideal for anyone doing heavy weight lifting. These straps come in one size and are ideal for extremely heavy lifting specifically on exercises such as dead lifts and bent over rows - helping to increase your grip and the contact with the bar.",
+            "price": 11.99,
+            "category": 4,
+            "image": "products/equipment/lifting_grips.jpg"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "products.product",
+        "fields": {
+            "name": "Muscle Roller", 
+            "sku": "equ10003",
+            "description": "The Muscle Roller is a training aid ideal for warm up and recovery using deep tissue massaging. It has built in foam grooves and bumps on its surface to support muscle release for all sports enthusiasts from HIIT fanatics to budding boxers. Comes with instructional guide.",
+            "price": 23.99,
+            "category": 4,
+            "image": "products/equipment/muscle_roller.jpg"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "products.product",
+        "fields": {
+            "name": "Resistance Bands Pair (23-54kg)", 
+            "sku": "equ10004",
+            "description": "Whether you’re looking to boost your bench, supersize your squats, or increase the difficulty of your home workout, our Resistance Bands can be added to any exercise. These exercise bands also come in a variety of resistance levels, ideal for use as a lightweight booty band or adding extra load to you weighted movements - helping to build progress as you strive for success. Dark Grey Bands - 23-54kg resistance",
+            "price": 19.99,
+            "category": 4,
+            "image": "products/equipment/resistance_bands.jpg"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "products.product",
+        "fields": {
+            "name": "Metal Shaker", 
+            "sku": "equ10005",
+            "description": "Crafted from 100% stainless steel, our Metal Shaker is perfect for mixing supplements on the go —from weight-gainers and protein blends, to amino acids and creatine - stay on top of your nutrition, wherever you are. Note: Hot liquids should not be used in this shaker.",
+            "price": 10.99,
+            "category": 4,
+            "image": "products/equipment/shaker.jpg"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "products.product",
+        "fields": {
+            "name": "Yoga Block", 
+            "sku": "equ10006",
+            "description": "Enhance your Yoga practice by adding a Yoga Block into your session. A yoga block can help to support, stabilise, and align the body as you move through your yoga flow, as well as deepen your flexibility or modify a movement if you’re not quite ready to tackle a certain pose yet. Our Yoga Block is made from a high quality, lightweight EVA, that will be able to support your stretches without weighing down your yoga bag either side of your practice.",
+            "price": 10.99,
+            "category": 4,
+            "image": "products/equipment/yoga_block.jpg"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "products.product",
+        "fields": {
+            "name": "Yoga Mat", 
+            "sku": "equ10007",
+            "description": "Put your practice first with our Composure range of yoga accessories. Our yoga mat has been designed with rubber wave grooves for extra grip and thick foam cushioning to make going from pose to pose as free-flowing as possible. Finished with a debossed MP logo and space for your own name, you can make your practice personal to you. Dimensions: 183cm x 61cm x 0.6cm",
+            "price": 24.99,
+            "category": 4,
+            "image": "products/equipment/yoga_mat.jpg"
         }
     }
 ]
