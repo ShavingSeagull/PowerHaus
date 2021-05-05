@@ -25,7 +25,14 @@
             {% endfor %}
         </div>
     {% endif %}
-    <h3 class="mb-4">{{ user }}'s Profile</h3>
+    <h3 class="mb-4">
+        {{ user }}'s Profile 
+        {% if user.is_superuser %}
+            <span class="badge badge-pill admin-badge">Admin</span>
+        {% elif user.is_staff %}
+            <span class="badge badge-pill badge-success">Staff</span>
+        {% endif %}
+    </h3>
     <div class="row">
         {% if user.profile.profile_pic %}
             <img class="col-lg-3 profile-img mx-auto img-fluid" src="{{ MEDIA_URL }}{{ user.profile.profile_pic }}" alt="Profile Image" />

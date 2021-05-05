@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 
-p, ul, form {
+p, ul, form, .badge {
 	font-family: pontano_sans, sans-serif;
 }
 
@@ -58,6 +58,11 @@ section h2 {
 	background-color: #CC0000;
 	color: #fff;
 	font-family: life_is_okayregular, "Arial Black", sans-serif;
+}
+
+.admin-badge {
+	background-color: #FFA500;
+	color: #fff;
 }
 
 .parallax {

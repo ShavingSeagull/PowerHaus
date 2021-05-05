@@ -67,7 +67,14 @@
                         {% endif %}
                     </h4>
                     <p class="text-muted mb-0">
-                        Posted by: <a href="{% url 'profile' review.author.user.username %}" class="text-muted">{{ review.author.user.username }}</a> on {{ review.date }}
+                        Posted by: <a href="{% url 'profile' review.author.user.username %}" class="text-muted">
+                            {{ review.author.user.username }}  
+                            {% if review.author.user.is_superuser %}
+                                <span class="badge badge-pill admin-badge">Admin</span>
+                            {% elif review.author.user.is_staff %}
+                                <span class="badge badge-pill badge-success">Staff</span>
+                            {% endif %}
+                        </a> on {{ review.date }}
                     </p>
                     <p class="text-muted mt-0">
                         Rated: {% if review.rating == "good" %}<i class="fas fa-thumbs-up"></i>{% else %}<i class="fas fa-thumbs-down"></i>{% endif %}
