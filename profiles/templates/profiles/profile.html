@@ -40,9 +40,14 @@
             <img class="col-lg-3 profile-img mx-auto img-fluid" src="{% static 'images/blank_avatar.jpg' %}" alt="Profile Image" />
         {% endif %}
         <div class="col-lg-9">
-            <p><strong>Name:</strong> {{ first_name }}</p>
+            <!-- Uses the User object's first_name property if it has been set in the admin panel, otherwise uses the profile version -->
+            {% if user.first_name %}
+                <p><strong>Name:</strong> {{ user.first_name }}</p>
+            {% else %}
+                <p><strong>Name:</strong> {{ first_name }}</p>
+            {% endif %}
             {% if user == request.user %}
-            <p><strong>Email:</strong> {{ email }}</p>
+                <p><strong>Email:</strong> {{ email }}</p>
             {% endif %}
             <p><strong>Date joined:</strong> {{ date_joined }}</p>
             <p><strong>Last login:</strong> {{ last_login }}</p>
