@@ -23,7 +23,7 @@ def view_profile(request, username):
         current_user = request.user
         userprofile = {
             "user": current_user,
-            "first_name": current_user.first_name,
+            "first_name": current_user.profile.first_name,
             "email": current_user.email,
             "date_joined": current_user.date_joined,
             "last_login": current_user.last_login,
@@ -36,7 +36,7 @@ def view_profile(request, username):
             public_user = User.objects.get(username=username)
             userprofile = {
                 "user": public_user,
-                "first_name": public_user.first_name,
+                "first_name": public_user.profile.first_name,
                 "email": public_user.email,
                 "date_joined": public_user.date_joined,
                 "last_login": public_user.last_login,
