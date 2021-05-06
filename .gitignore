@@ -4,3 +4,4 @@ __pycache__/
 media/
 *.sqlite3
 *.bat
+db.json
