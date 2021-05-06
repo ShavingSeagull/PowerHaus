@@ -108,7 +108,7 @@ def order_history(request, username):
     
     now = timezone.now()
     user = get_object_or_404(Profile, user=request.user)
-    orders = Order.objects.filter(user_profile=user.id).order_by('-date')
+    orders = Order.objects.filter(user_profile=user).order_by('-date')
 
     context = {
         "orders": orders

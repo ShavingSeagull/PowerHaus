@@ -12,6 +12,7 @@ def image_upload(instance, file):
     return f"{instance.user.username}/{file}"
 
 class Profile(models.Model):
+    profile_id = models.CharField(primary_key=True, max_length=150)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, blank=True, null=True)
     bio = models.TextField(max_length=300, blank=True, default="This user likes to keep an air of mystery about them...")
@@ -34,5 +35,5 @@ def create_or_update_profile(sender, instance, created, **kwargs):
     Function for creating or updating the user profile
     """
     if created:
-        Profile.objects.create(user=instance)
+        Profile.objects.create(pk=instance, user=instance)
     instance.profile.save()
