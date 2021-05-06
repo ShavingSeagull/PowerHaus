@@ -334,6 +334,15 @@ footer hr {
 }
 /*** /.Footer ***/
 
+/*** Custom error pages - 404 and 500 ***/
+.error-hero-img {
+	background-image: url("../images/sad_dog.jpg");
+	background-color: #222222;
+	background-position: center;
+	min-height: 50%;
+}
+/*** /.Custom error pages ***/
+
 /*** Media Queries ***/
 @media screen and (max-width: 1300px) {
 	.parallax {
