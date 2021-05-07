@@ -73,14 +73,16 @@
 /*** /.Discount view ***/
 
 /*** Media Queries ***/
-@media screen and (max-width: 560px) {
-    #profile-nav ul {
-        font-size: 1em;
-    }
-
+@media screen and (max-width: 992px) {
     .profile-img {
         max-height: 300px;
         width: auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    #profile-nav ul {
+        font-size: 1em;
     }
 
     .order-number-header {
