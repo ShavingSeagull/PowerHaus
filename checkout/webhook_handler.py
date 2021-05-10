@@ -8,6 +8,7 @@ from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import Profile
 
+
 class StripeWH_Handler:
     """
     This class handles and processes the Stripe

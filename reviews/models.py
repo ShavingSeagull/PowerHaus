@@ -2,6 +2,7 @@ from django.db import models
 from products.models import Product
 from profiles.models import Profile
 
+
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     author = models.ForeignKey(Profile, on_delete=models.CASCADE)

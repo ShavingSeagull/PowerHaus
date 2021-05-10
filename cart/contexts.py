@@ -15,8 +15,9 @@ def cart_contents(request):
     remain human-readable.
     """
 
-    # Uses a message variable passed to the template to prevent the same Django message 
-    # getting displayed on every page due to a lack of render or redirect in the context
+    # Uses a message variable passed to the template to prevent the same
+    # Django message getting displayed on every page due to a lack of render
+    # or redirect in the context
     message = None
     message_shown = False
     cart = request.session.get('cart', {})
@@ -51,39 +52,39 @@ def cart_contents(request):
                                                   expiry_date__gte=now,
                                                   active=True)
 
-                # Promo Codes can target specific product groups, like Protein products, or all products
-                # This checks if the Code type matches the product type, or whether it targets all products
-                if promocode.product_type == category or promocode.product_type == 'all':
-                    discount = Decimal((promocode.discount * price_by_quantity) / Decimal(100)).quantize(Decimal('.01'))
+                # Promo Codes can target specific product groups,
+                # like Protein products, or all products
+                # This checks if the Code type matches the product type,
+                # or whether it targets all products
+                if promocode.product_type == category or promocode.product_type == 'all':  # noqa: E501
+                    discount = Decimal((promocode.discount * price_by_quantity) / Decimal(100)).quantize(Decimal('.01'))  # noqa: E501
                     discount_total += discount
-                    #messages.success(request, "Promo Code added!")
                     message = {"success": "Promo Code added!"}
 
             except PromoCode.DoesNotExist:
-                #messages.error(request, "Promo Code is invalid")
                 message = {"error": "Promo Code is invalid"}
-
 
         product_count += quantity
         request.session['discount'] = code
 
         cart_items.append({
-                'id': id, 
-                'quantity': quantity, 
-                'product': product, 
+                'id': id,
+                'quantity': quantity,
+                'product': product,
                 'item_total': price_by_quantity
                 })
 
-    # Shipping and total need to be outside the loop to avoid repeated additions that aren't necessary
+    # Shipping and total need to be outside the loop to avoid repeated
+    # additions that aren't necessary
     shipping *= product_count
-    total = Decimal(subtotal - discount_total + shipping).quantize(Decimal('.01'))
+    total = Decimal(subtotal - discount_total + shipping).quantize(Decimal('.01'))  # noqa: E501
 
     return {
-        'cart_items': cart_items, 
-        'subtotal': subtotal, 
-        'discount_total': discount_total, 
-        'shipping': shipping, 
-        'total': total, 
-        'product_count': product_count, 
+        'cart_items': cart_items,
+        'subtotal': subtotal,
+        'discount_total': discount_total,
+        'shipping': shipping,
+        'total': total,
+        'product_count': product_count,
         'cart_message': message
     }

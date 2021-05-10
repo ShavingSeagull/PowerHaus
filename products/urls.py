@@ -9,6 +9,8 @@ urlpatterns = [
     path('equipment', products, name="equipment"),
     path('<category>/<product_id>', product_item, name="product_item"),
     path('<category>/<product_id>/add_review', add_review, name="add_review"),
-    path('<category>/<product_id>/edit_review/<review_id>', edit_review, name="edit_review"),
-    path('<category>/<product_id>/delete_review/<review_id>', delete_review, name="delete_review")
+    path('<category>/<product_id>/edit_review/<review_id>', edit_review,
+         name="edit_review"),
+    path('<category>/<product_id>/delete_review/<review_id>', delete_review,
+         name="delete_review")
 ]

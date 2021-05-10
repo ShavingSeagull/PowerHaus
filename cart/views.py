@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect, reverse
 
+
 def view_cart(request):
     """
     Displays the cart
     """
     return render(request, "cart/cart.html")
 
+
 def add_to_cart(request, id):
     """
-    Adds an item to the cart. The function is fired from the 
-    product page, where the quantity is automatically set to 1. 
+    Adds an item to the cart. The function is fired from the
+    product page, where the quantity is automatically set to 1.
     This is then altered in the cart if the user wants more.
     """
     quantity = 1
@@ -19,6 +21,7 @@ def add_to_cart(request, id):
 
     request.session['cart'] = cart
     return redirect(reverse('cart'))
+
 
 def adjust_cart(request, id):
     """

@@ -6,11 +6,13 @@ from django.contrib import messages
 from django.conf import settings
 from .forms import ContactForm
 
+
 def index(request):
     """
     Function for rendering the main home page
     """
     return render(request, "home/index.html")
+
 
 def about(request):
     """
@@ -18,11 +20,13 @@ def about(request):
     """
     return render(request, "home/about.html")
 
+
 def delivery_info(request):
     """
     Function for rendering the delivery information page
     """
     return render(request, "home/delivery_info.html")
+
 
 def contact(request):
     """
@@ -30,7 +34,8 @@ def contact(request):
     reCAPTCHA verfication adapted from the excellent article by Vitor Freitas:
     https://simpleisbetterthancomplex.com/tutorial/2017/02/21/how-to-add-recaptcha-to-django-site.html
     """
-    # Variable is sent to the template as a hidden field, which the JS will pick up 
+    # Variable is sent to the template as a hidden field,
+    # which the JS will pick up
     # to determine if the message confirmation modal should fire
     fire_modal = False
 
@@ -55,7 +60,7 @@ def contact(request):
                 'response': recaptcha_response
             }
             data = urllib.parse.urlencode(values).encode()
-            req =  urllib.request.Request(url, data=data)
+            req = urllib.request.Request(url, data=data)
             response = urllib.request.urlopen(req)
             result = json.loads(response.read().decode())
 
@@ -72,8 +77,9 @@ def contact(request):
             else:
                 messages.error(request, "Invalid reCAPTCHA. Please try again.")
         else:
-            messages.error(request, "Sorry, something went wrong! Please try again.")
-    
+            messages.error(request,
+                           "Sorry, something went wrong! Please try again.")
+
     context = {
         "captcha_key": settings.RECAPTCHA_PUBLIC_KEY,
         "fire_modal": fire_modal
