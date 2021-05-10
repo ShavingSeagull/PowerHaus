@@ -1,4 +1,4 @@
-/****** Index (Home) page ******/
+/***** Index (Home) page *****/
 
 /*** Header ***/
 .index-hero-img {
@@ -130,3 +130,133 @@
 		font-size: 1em;
 	}
 }
+/***** /.Index Page *****/
+
+/***** About Page *****/
+.about-hero-img {
+    background-image: url("../../images/barbell.jpg");
+	background-color: #222222;
+    background-position: center;
+	min-height: 50%;
+}
+
+.about-section p {
+    font-weight: bold;
+}
+
+.about-section h2 {
+    text-align: left;
+}
+
+.about-section .metal-header {
+    font-size: 3.5em;
+}
+
+.about-header > span {
+    color: red;
+}
+
+.about-header-white {
+    color: #ffffff;
+    text-shadow: 3px 5px 4px #000000;
+}
+
+/*** Media Queries ***/
+@media screen and (max-width: 560px) {
+    .about-section .metal-header {
+        font-size: 3em;
+    }
+}
+/***** /.About Page *****/
+
+/***** Contact Page *****/
+.contact-hero-img {
+    background-image: url("../../images/call.jpg");
+    background-color: #222222;
+    background-position: center;
+    min-height: 50%;
+}
+
+.contact-section .metal-header {
+    font-size: 3.5em;
+}
+
+.contact-section p {
+    font-weight: bold;
+}
+
+.contact-section h2 {
+    text-align: left;
+}
+
+#contact-form label > span {
+    color: red;
+}
+
+/*** Media Queries ***/
+@media screen and (max-width: 560px) {
+    .contact-section .metal-header {
+        font-size: 2.5em;
+    }
+}
+/***** /.Contact Page *****/
+
+/***** Delivery Info Page *****/
+.delivery-hero-img {
+    background-image: url("../../images/delivery.jpg");
+	background-color: #222222;
+    background-position: center;
+	min-height: 50%;
+}
+
+.delivery-section p {
+    font-weight: bold;
+}
+
+.delivery-section ul {
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.delivery-section h2 {
+    text-align: left;
+}
+
+.delivery-section .metal-header {
+    font-size: 3.5em;
+}
+
+.delivery-header > span {
+    color: red;
+}
+
+.delivery-header-white {
+    color: #ffffff;
+    text-shadow: 3px 5px 4px #000000;
+}
+
+p.delivery-subheader {
+    font-family: life_is_okayregular, 'Arial Black', sans-serif;
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+.country-list-btn {
+    background-color: #FFA500;
+}
+
+#country-list {
+    display: none;
+}
+
+ul.delivery-times {
+    list-style-type: square;
+}
+
+/*** Media Queries ***/
+@media screen and (max-width: 560px) {
+    .delivery-section .metal-header {
+        font-size: 3em;
+    }
+}
+/***** /.Delivery Info Page *****/
