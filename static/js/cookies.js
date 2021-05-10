@@ -22,5 +22,5 @@ $(document).ready(function(){
 	// Click listener for GDPR acceptance on Home page
 	$('#gdpr-btn').click(() => {
 		setCookie("consentgiven", true, 1);
-	})
+	});
 });

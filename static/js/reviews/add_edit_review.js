@@ -8,5 +8,5 @@ $(document).ready(function(){
     $('.rating-label').click(function() {
         $(RADIO_BTNS).removeAttr('checked');
         $(this).prev().attr('checked', 'true');
-    })
+    });
 });

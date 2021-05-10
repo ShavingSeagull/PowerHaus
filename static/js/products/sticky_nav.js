@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     function skinnyNav() {
         if (window.pageYOffset >= sticky) {
-            nav.classList.add("sticky-nav")
+            nav.classList.add("sticky-nav");
         } else {
             nav.classList.remove("sticky-nav");
         }
