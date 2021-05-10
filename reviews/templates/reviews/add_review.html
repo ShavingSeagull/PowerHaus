@@ -38,7 +38,7 @@
 
 <!-- Add Review Section -->
 <section class="container about-section mt-5 no-floating-footer">
-    <h1>Add Review</h1>
+    <h2>Add Review</h2>
     <form action="{% url 'add_review' category=category product_id=product_id %}" method="POST" id="add-review-form">
         {% csrf_token %}
         {{ review_form | as_bootstrap }} 

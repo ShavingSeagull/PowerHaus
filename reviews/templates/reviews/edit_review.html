@@ -38,7 +38,7 @@
 
 <!-- Edit Review Section -->
 <section class="container about-section mt-5 no-floating-footer">
-    <h1>Edit Review</h1>
+    <h2>Edit Review</h2>
     <form action="{% url 'edit_review' category=category product_id=product_id review_id=review_id %}" method="POST" id="edit-review-form">
         {% csrf_token %}
         {{ review_form | as_bootstrap }} 

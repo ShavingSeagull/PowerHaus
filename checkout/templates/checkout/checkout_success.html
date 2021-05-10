@@ -53,37 +53,36 @@
             {% endfor %}
         </div>
     </div>
-        <div class="row">
-            <div class="col-lg-9">
-                <p class="mb-0">Subtotal: £{{ order.subtotal }}</p>
-                {% if order.discount %}
-                    <p class="my-0 text-danger">Discount: -£{{ order.discount }}</p>
-                {% endif %}
-                <p class="my-0">Delivery: £{{ order.shipping }}</p>
-                <p class="mt-0"><strong>Total: £{{ order.total }}</strong></p>
-            </div>
+    <div class="row">
+        <div class="col-lg-9">
+            <p class="mb-0">Subtotal: £{{ order.subtotal }}</p>
+            {% if order.discount %}
+                <p class="my-0 text-danger">Discount: -£{{ order.discount }}</p>
+            {% endif %}
+            <p class="my-0">Delivery: £{{ order.shipping }}</p>
+            <p class="mt-0"><strong>Total: £{{ order.total }}</strong></p>
         </div>
-        <hr />
-        <div class="row">
-            <div class="col-sm-6 mb-4">
-                <p class="text-muted">Order will be sent to:</p>
-                <p class="my-0">{{ order.address_1 }}</p>
-                {% if order.address_2 %}
-                    <p class="my-0">{{ order.address_2 }}</p>
-                {% endif %}
-                <p class="my-0">{{ order.city }}</p>
-                {% if order.county %}
-                    <p class="my-0">{{ order.county }}</p>
-                {% endif %}
-                <p class="my-0">{{ order.post_code }}</p>
-                <p class="my-0">{{ order.country }}</p>
-            </div>
-            <div class="col-sm-6 mb-4">
-                <p class="text-muted">Your details:</p>
-                <p class="my-0">{{ order.full_name }}</p>
-                <p class="my-0">{{ order.email }}</p>
-                <p class="my-0">{{ order.phone }}</p>
-            </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6 mb-4">
+            <p class="text-muted">Order will be sent to:</p>
+            <p class="my-0">{{ order.address_1 }}</p>
+            {% if order.address_2 %}
+                <p class="my-0">{{ order.address_2 }}</p>
+            {% endif %}
+            <p class="my-0">{{ order.city }}</p>
+            {% if order.county %}
+                <p class="my-0">{{ order.county }}</p>
+            {% endif %}
+            <p class="my-0">{{ order.post_code }}</p>
+            <p class="my-0">{{ order.country }}</p>
+        </div>
+        <div class="col-sm-6 mb-4">
+            <p class="text-muted">Your details:</p>
+            <p class="my-0">{{ order.full_name }}</p>
+            <p class="my-0">{{ order.email }}</p>
+            <p class="my-0">{{ order.phone }}</p>
         </div>
     </div>
 </section>
