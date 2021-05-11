@@ -1,7 +1,7 @@
 env.py
 notes.txt
 __pycache__/
-media/
 *.sqlite3
 *.bat
 db.json
+*.pdf
