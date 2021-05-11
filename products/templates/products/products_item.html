@@ -2,6 +2,9 @@
 {% load static %}
 {% block title %}{{ product.name }}{% endblock %}
 
+{% block meta %}
+<meta name="description" content="This product's details." />
+{% endblock %}
 {% block custom_css %}
 <link rel="stylesheet" href="{% static 'css/products/products.css' %}" />
 {% endblock %}

@@ -2,6 +2,9 @@
 {% block title %}{{ user }}'s Order Info{% endblock %}
 {% load static %}
 
+{% block meta %}
+<meta name="description" content="The details of this order." />
+{% endblock %}
 {% block custom_css %}
 <link rel="stylesheet" href="{% static 'css/profiles/profiles.css' %}" />
 {% endblock %}
