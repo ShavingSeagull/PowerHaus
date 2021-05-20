@@ -114,7 +114,7 @@ if "DEV" in os.environ:
     }
 else:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get("POSTGRES_URL"))
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
 
 # Password validation
