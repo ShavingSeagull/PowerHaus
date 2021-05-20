@@ -57,17 +57,19 @@ $(document).ready(function() {
 	}
 
 	// Event handlers for mousing over on larger screens
-	$(NAV).mouseenter(() => {
-		navControl();
-		// Timeout has to fire slightly after the CSS transition property of 0.4s
-		setTimeout(showElements, 410);
+	if ($(window).innerWidth() > 1300) {
+		$(NAV).mouseenter(() => {
+			navControl();
+			// Timeout has to fire slightly after the CSS transition property of 0.4s
+			setTimeout(showElements, 410);
 
-	});
+		});
 
-	$(NAV).mouseleave(() => {
-		navControl();
-		hideElements();
-	});
+		$(NAV).mouseleave(() => {
+			navControl();
+			hideElements();
+		});
+	}
 
 	// Click handler for nav button on smaller screens
 	$("#nav-button").click(() => {
